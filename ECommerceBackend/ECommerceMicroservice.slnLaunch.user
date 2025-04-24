@@ -1,0 +1,53 @@
+[
+  {
+    "Name": "Ocelot+Warehouse",
+    "Projects": [
+      {
+        "Path": "OcelotGateway\\OcelotGateway.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WarehouseService\\WarehouseService.csproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "FullService",
+    "Projects": [
+      {
+        "Path": "OcelotGateway\\OcelotGateway.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WarehouseService\\WarehouseService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "UserService\\UserService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CartService\\CartService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "OrderService\\OrderService.csproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "User+Gateway",
+    "Projects": [
+      {
+        "Path": "UserService\\UserService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ECommerceGateway\\ECommerceGateway.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

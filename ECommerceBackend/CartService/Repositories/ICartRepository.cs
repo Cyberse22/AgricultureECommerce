@@ -7,5 +7,6 @@ namespace CartService.Repositories
         Task<CartModel> GetCartAsync(string userId);
         Task<bool> UpdateCartAsync(CartModel model);
         Task<bool> DeleteCartAsync(string userId);
+        Task <List<CartItemModel>> GetCartItemAsync(string userId);
     }
 }

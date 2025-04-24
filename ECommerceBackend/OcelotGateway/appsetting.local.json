@@ -1,0 +1,13 @@
+﻿{
+  "UserServiceHost": "localhost",
+  "UserServicePort": 7001,
+
+  "CartServiceHost": "localhost",
+  "CartServicePort": 7004,
+
+  "WarehouseServiceHost": "localhost",
+  "WarehouseServicePort": 7007,
+
+  "ConsulHost": "localhost",
+  "ConsulPort": 8500
+}

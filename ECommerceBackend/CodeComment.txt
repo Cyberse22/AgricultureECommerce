@@ -16,4 +16,334 @@ Lỗi thường gặp khi mới dùng Docker:
 - Thêm biến container_name để Container có một tên riêng và dễ dàng chạy độc lập với nhau
 - Với PostgreSQL, khi khởi động máy sẽ cùng lúc khởi động Port 5432 của PostgreSQL, vô tình khi Build Image và Run Container thì sẽ bị lỗi xung đột Port
 - Kiểm tra .dockerignore trước khi pull, vì Docker sẽ bỏ qua những thứ có tên được nêu trong đó
-- 
+
+{
+    "GlobalConfiguration": {
+        "ServiceDiscoveryProvider": {
+            "Host": "localhost",
+            "Port": 8500,
+            "Type": "Consul",
+            "Scheme": "http"
+        }
+    },
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/Cart/{userId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "CartService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7004
+                }
+            ],
+            "UpstreamPathTemplate": "/cart/{userId}",
+            "UpstreamHttpMethod": [ "GET", "DELETE" ],
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/Cart/{userId}/items",
+            "DownstreamScheme": "http",
+            "ServiceName": "CartService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7004
+                }
+            ],
+            "UpstreamPathTemplate": "/cart/{userId}/items",
+            "UpstreamHttpMethod": [ "GET", "POST" ],
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/Cart/{userId}/items/{productId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "CartService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7004
+                }
+            ],
+            "UpstreamPathTemplate": "/cart/{userId}/items/{productId}",
+            "UpstreamHttpMethod": [ "DELETE" ],
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/Account/GetCurrentUser",
+            "DownstreamScheme": "http",
+            "ServiceName": "UserService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/account/currentUser",
+            "UpstreamHttpMethod": [ "GET" ],
+            "LoadBalancerOptions": {
+                "Type": "RoundRobin"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/Account/SignUp",
+            "DownstreamScheme": "http",
+            "ServiceName": "UserService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/account/signUp",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Account/SignIn",
+            "DownstreamScheme": "http",
+            "ServiceName": "UserService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/account/signIn",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Account/ChangePassword",
+            "DownstreamScheme": "http",
+            "ServiceName": "UserService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/account/changePassword",
+            "UpstreamHttpMethod": [ "PUT" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Account/update-avatar",
+            "DownstreamScheme": "http",
+            "ServiceName": "UserService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7001
+                }
+            ],
+            "UpstreamPathTemplate": "/account/update-avatar",
+            "UpstreamHttpMethod": [ "PUT" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Product",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/products",
+            "UpstreamHttpMethod": [ "GET", "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Product/{productId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/product/{productId}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Product/category/{categoryId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/product/category/{categoryId}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Category",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/category",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Category/{categoryId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/category/{categoryId}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Category/add-products",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/category/add-products",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Category/remove-products",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/category/remove-products",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Category/add-category",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/category/add-category",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Category/update-category",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/category/update-category",
+            "UpstreamHttpMethod": [ "PUT" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Inventory",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/inventory",
+            "UpstreamHttpMethod": [ "GET", "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Inventory/{inventoryId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/inventory/{inventoryId}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Inventory/transaction",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/inventory/transaction",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Inventory/transaction/{transactionId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/inventory/transaction/{transactionId}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Inventory/products/{inventoryId}",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/inventory/products/{inventoryId}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/Product/product/update-image",
+            "DownstreamScheme": "http",
+            "ServiceName": "WarehouseService",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7007
+                }
+            ],
+            "UpstreamPathTemplate": "/product/update-image",
+            "UpstreamHttpMethod": [ "PUT", "POST" ]
+        }
+    ],
+    "Logging": {
+        "LogLevel": {
+            "Default": "Debug",
+            "System": "Information",
+            "Microsoft": "Information"
+        }
+    }
+}

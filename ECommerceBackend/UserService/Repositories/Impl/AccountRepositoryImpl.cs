@@ -49,6 +49,18 @@ namespace UserService.Repositories.Impl
             return await _userManager.Users.FirstOrDefaultAsync(u => u.PhoneNumber == phoneNumber);
         }
 
+        public async Task<bool> UpdateAvatarAsync(string phoneNumber, string avatar)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.PhoneNumber == phoneNumber);
+            if (user != null)
+            {
+                user.Avatar = avatar;
+                var result = await _userManager.UpdateAsync(user);
+                return result.Succeeded;
+            }
+            return false;
+        }
+
         public async Task<SignInResult> SignInAsync(string phoneNumber, string password)
         {
             var user = await _userManager.Users.FirstOrDefaultAsync(u => u.PhoneNumber == phoneNumber);
@@ -74,6 +86,7 @@ namespace UserService.Repositories.Impl
         {
             var user = new ApplicationUser
             {
+                UserId = ("user" + model.PhoneNumber),
                 UserName = model.PhoneNumber,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
@@ -81,6 +94,7 @@ namespace UserService.Repositories.Impl
                 DateOfBirth = model.DateOfBirth,
                 Gender = model.Gender,
                 PhoneNumber = model.PhoneNumber,
+                Address = model.Address,
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded) 

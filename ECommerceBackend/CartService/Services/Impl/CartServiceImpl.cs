@@ -46,5 +46,10 @@ namespace CartService.Services.Impl
             }
             return false;
         }
+
+        public async Task<List<CartItemModel>> GetCartItemAsync(string userId)
+        {
+            return await _cartRepository.GetCartItemAsync(userId);
+        }
     }
 }

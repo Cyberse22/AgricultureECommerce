@@ -12,6 +12,7 @@ namespace UserService.Services
         Task<string> SignInAsync(SignInModel model);
         Task<bool> AssignRoleAsync(ApplicationUser user, string role);
         Task<bool> ChangePasswordAsync(string phoneNumber, string currentPassword, string newPassword);
-        Task<UserModel> GetCurrentUserAsync();
+        Task <UserModel> GetCurrentUserAsync();
+        Task <string> UpdateAvatarAsync(UserAvatar avatar);
     }
 }

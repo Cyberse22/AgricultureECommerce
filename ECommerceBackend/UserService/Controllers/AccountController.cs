@@ -32,7 +32,7 @@ namespace UserService.Controllers
             {
                 return Ok(result.Succeeded);
             }
-            return StatusCode(500);
+            return BadRequest(result.Errors);
         }
         [HttpPost("SignIn")]
         public async Task<IActionResult> SignIn(SignInModel model)
@@ -71,11 +71,6 @@ namespace UserService.Controllers
         [HttpGet("GetCurrentUser")]
         public async Task<IActionResult> GetCurrentUser()
         {
-            //var email = User.FindFirstValue(ClaimTypes.Email);
-            //if (string.IsNullOrEmpty(email))
-            //{
-            //    return Unauthorized("User not exists");
-            //}
             var phoneNumber = User.FindFirstValue(ClaimTypes.MobilePhone);
             if (string.IsNullOrEmpty(phoneNumber))
             {
@@ -97,6 +92,20 @@ namespace UserService.Controllers
                 return Ok(result.Succeeded);
             }
             return StatusCode(500);
+        }
+
+        [HttpPut("update-avatar")]
+        public async Task<IActionResult> UpdateAvatar([FromForm] UserAvatar model)
+        {
+            try
+            {
+                var avatar = await _accountService.UpdateAvatarAsync(model);
+                return Ok(avatar);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

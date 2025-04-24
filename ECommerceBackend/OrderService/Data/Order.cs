@@ -6,8 +6,13 @@
         public string? CustomerId { get; set; }
         public string? CustomerName { get; set; }
         public string? CustomerPhone { get; set; }
-        public string? PaymentMethod { get; set; }
-        public decimal? TotalAmount { get; private set; }
-        public string Currency { get; set; } = "VND";
+        public string? Status { get; set; } // Pending, Failed, Paid, Cancelled
+        public decimal TotalAmount { get; set; }
+        public string? PaymentMethod { get; set; } // Momo, VNPAY, Cash
+        public string? PaymentTransactionId { get; set; }
+        public string? PaymentUrl { get; set; }
+        public int Index { get; set; }
+        
+        public List<OrderItem> Items { get; set; } = new(); 
     }
 }

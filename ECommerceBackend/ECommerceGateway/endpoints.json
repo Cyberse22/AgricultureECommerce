@@ -1,0 +1,25 @@
+{
+    "Endpoints": [
+        {
+            "UpstreamPath": "/account/SignIn",
+            "DownstreamPath": "/api/Account/SignIn",
+            "Method": "POST",
+            "RequestModel": "SignInModel",
+            "ResponseType": "string"
+        },
+        {
+            "UpstreamPath": "/account/SignUp",
+            "DownstreamPath": "/api/Account/SignUp",
+            "Method": "POST",
+            "RequestModel": "SignUpModel",
+            "ResponseType": "bool"
+        },
+        {
+            "UpstreamPath": "/account/GetCurrentUser",
+            "DownstreamPath": "/api/Account/GetCurrentUser",
+            "Method": "GET",
+            "RequestModel": null,
+            "ResponseType": "object"
+        }
+    ]
+}

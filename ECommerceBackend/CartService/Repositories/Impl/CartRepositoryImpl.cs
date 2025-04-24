@@ -18,6 +18,16 @@ namespace CartService.Repositories.Impl
             return true;
         }
 
+        public async Task<List<CartItemModel>> GetCartItemAsync(string userId)
+        {
+            var cartJson = await _redisCache.GetStringAsync(userId); 
+            if (string.IsNullOrEmpty(cartJson))
+                return new List<CartItemModel>();
+
+            var cart = JsonConvert.DeserializeObject<CartModel>(cartJson);
+            return cart?.Items ?? new List<CartItemModel>();
+        }
+
         public async Task<CartModel> GetCartAsync(string userId)
         {
             var cartData = await _redisCache.GetStringAsync(userId);

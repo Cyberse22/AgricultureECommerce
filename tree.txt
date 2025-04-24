@@ -1,0 +1,1797 @@
+D:.
+│   .dockerignore
+│   CodeComment.txt
+│   docker-compose.yml
+│   ECommerceMicroservice.sln
+│   ECommerceMicroservice.sln.DotSettings.user
+│   ECommerceMicroservice.slnLaunch.user
+│   projectkey.env
+│   README.md
+│
+├───.idea
+│   ├───.idea.ECommerceMicroservice
+│   │   └───.idea
+│   │           .gitignore
+│   │           .name
+│   │           encodings.xml
+│   │           indexLayout.xml
+│   │           projectSettingsUpdater.xml
+│   │           vcs.xml
+│   │           workspace.xml
+│   │
+│   └───config
+│           applicationhost.config
+│
+├───CartService
+│   │   appsettings.Development.json
+│   │   appsettings.json
+│   │   CartService.csproj
+│   │   CartService.csproj.user
+│   │   CartService.http
+│   │   Dockerfile
+│   │   Program.cs
+│   │   WeatherForecast.cs
+│   │
+│   ├───bin
+│   │   └───Debug
+│   │       ├───net8.0
+│   │       │   │   appsettings.Development.json
+│   │       │   │   appsettings.json
+│   │       │   │   CartService.deps.json
+│   │       │   │   CartService.dll
+│   │       │   │   CartService.exe
+│   │       │   │   CartService.pdb
+│   │       │   │   CartService.runtimeconfig.json
+│   │       │   │   CartService.staticwebassets.endpoints.json
+│   │       │   │   CloudinaryDotNet.dll
+│   │       │   │   dotenv.net.dll
+│   │       │   │   Microsoft.Extensions.Caching.Abstractions.dll
+│   │       │   │   Microsoft.Extensions.Caching.StackExchangeRedis.dll
+│   │       │   │   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+│   │       │   │   Microsoft.Extensions.DependencyInjection.dll
+│   │       │   │   Microsoft.Extensions.Logging.Abstractions.dll
+│   │       │   │   Microsoft.Extensions.Options.dll
+│   │       │   │   Microsoft.Extensions.Primitives.dll
+│   │       │   │   Microsoft.OpenApi.dll
+│   │       │   │   NetTopologySuite.dll
+│   │       │   │   Newtonsoft.Json.dll
+│   │       │   │   NRedisStack.dll
+│   │       │   │   Pipelines.Sockets.Unofficial.dll
+│   │       │   │   Polly.Core.dll
+│   │       │   │   Polly.dll
+│   │       │   │   StackExchange.Redis.dll
+│   │       │   │   Swashbuckle.AspNetCore.Swagger.dll
+│   │       │   │   Swashbuckle.AspNetCore.SwaggerGen.dll
+│   │       │   │   Swashbuckle.AspNetCore.SwaggerUI.dll
+│   │       │   │   System.Diagnostics.DiagnosticSource.dll
+│   │       │   │   System.IO.Pipelines.dll
+│   │       │   │   System.Text.Encodings.Web.dll
+│   │       │   │   System.Text.Json.dll
+│   │       │   │
+│   │       │   └───runtimes
+│   │       │       └───browser
+│   │       │           └───lib
+│   │       │               └───net8.0
+│   │       │                       System.Text.Encodings.Web.dll
+│   │       │
+│   │       └───net9.0
+│   │               appsettings.Development.json
+│   │               appsettings.json
+│   │               CartService.deps.json
+│   │               CartService.dll
+│   │               CartService.exe
+│   │               CartService.pdb
+│   │               CartService.runtimeconfig.json
+│   │               CartService.staticwebassets.endpoints.json
+│   │               Microsoft.Extensions.Caching.StackExchangeRedis.dll
+│   │               Microsoft.OpenApi.dll
+│   │               NetTopologySuite.dll
+│   │               Newtonsoft.Json.dll
+│   │               NRedisStack.dll
+│   │               Pipelines.Sockets.Unofficial.dll
+│   │               Polly.Core.dll
+│   │               Polly.dll
+│   │               StackExchange.Redis.dll
+│   │               Swashbuckle.AspNetCore.Swagger.dll
+│   │               Swashbuckle.AspNetCore.SwaggerGen.dll
+│   │               Swashbuckle.AspNetCore.SwaggerUI.dll
+│   │
+│   ├───Controllers
+│   │       CartController.cs
+│   │       WeatherForecastController.cs
+│   │
+│   ├───Models
+│   │       CartItemModel.cs
+│   │       CartModel.cs
+│   │
+│   ├───obj
+│   │   │   CartService.csproj.nuget.dgspec.json
+│   │   │   CartService.csproj.nuget.g.props
+│   │   │   CartService.csproj.nuget.g.targets
+│   │   │   project.assets.json
+│   │   │   project.nuget.cache
+│   │   │   project.packagespec.json
+│   │   │   rider.project.model.nuget.info
+│   │   │   rider.project.restore.info
+│   │   │
+│   │   ├───Container
+│   │   │       AbsoluteOutputAssemblyPath.cache
+│   │   │       AdditionalProbingPaths.cache
+│   │   │       ContainerCreationResult.cache
+│   │   │       ContainerDevelopmentMode.cache
+│   │   │       ContainerId.cache
+│   │   │       ContainerName.cache
+│   │   │       ContainerOperatingSystemFlavor.cache
+│   │   │       ContainerRunContext.cache
+│   │   │       DebuggeeArguments.cache
+│   │   │       DebuggeeKillProcessCommand.cache
+│   │   │       DebuggeeProgram.cache
+│   │   │       DebuggeeWorkingDirectory.cache
+│   │   │       DistrolessHelperSupported.cache
+│   │   │       FastModeProjectMountDirectory.cache
+│   │   │       ImageBuildContext.cache
+│   │   │       ImageId.cache
+│   │   │       LaunchedImageId.cache
+│   │   │       OperatingSystemName.cache
+│   │   │       TargetFramework.cache
+│   │   │       VolumeMappings.cache
+│   │   │       VolumeMappings2.cache
+│   │   │       VsDbgScript.cache
+│   │   │
+│   │   ├───Debug
+│   │   │   ├───net8.0
+│   │   │   │   │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │   │   │   │   ApiEndpoints.json
+│   │   │   │   │   apphost.exe
+│   │   │   │   │   CartServ.AA4AD7E1.Up2Date
+│   │   │   │   │   CartService.AssemblyInfo.cs
+│   │   │   │   │   CartService.AssemblyInfoInputs.cache
+│   │   │   │   │   CartService.assets.cache
+│   │   │   │   │   CartService.csproj.AssemblyReference.cache
+│   │   │   │   │   CartService.csproj.BuildWithSkipAnalyzers
+│   │   │   │   │   CartService.csproj.CoreCompileInputs.cache
+│   │   │   │   │   CartService.csproj.FileListAbsolute.txt
+│   │   │   │   │   CartService.dll
+│   │   │   │   │   CartService.GeneratedMSBuildEditorConfig.editorconfig
+│   │   │   │   │   CartService.genruntimeconfig.cache
+│   │   │   │   │   CartService.GlobalUsings.g.cs
+│   │   │   │   │   CartService.MvcApplicationPartsAssemblyInfo.cache
+│   │   │   │   │   CartService.MvcApplicationPartsAssemblyInfo.cs
+│   │   │   │   │   CartService.pdb
+│   │   │   │   │   CartService.sourcelink.json
+│   │   │   │   │   staticwebassets.build.endpoints.json
+│   │   │   │   │   staticwebassets.build.json
+│   │   │   │   │   staticwebassets.references.upToDateCheck.txt
+│   │   │   │   │   staticwebassets.removed.txt
+│   │   │   │   │
+│   │   │   │   ├───EndpointInfo
+│   │   │   │   │       CartService.json
+│   │   │   │   │       CartService.OpenApiFiles.cache
+│   │   │   │   │
+│   │   │   │   ├───ref
+│   │   │   │   │       CartService.dll
+│   │   │   │   │
+│   │   │   │   ├───refint
+│   │   │   │   │       CartService.dll
+│   │   │   │   │
+│   │   │   │   └───staticwebassets
+│   │   │   │           msbuild.build.CartService.props
+│   │   │   │           msbuild.buildMultiTargeting.CartService.props
+│   │   │   │           msbuild.buildTransitive.CartService.props
+│   │   │   │
+│   │   │   └───net9.0
+│   │   │       │   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+│   │   │       │   ApiEndpoints.json
+│   │   │       │   apphost.exe
+│   │   │       │   CartServ.AA4AD7E1.Up2Date
+│   │   │       │   CartService.AssemblyInfo.cs
+│   │   │       │   CartService.AssemblyInfoInputs.cache
+│   │   │       │   CartService.assets.cache
+│   │   │       │   CartService.csproj.AssemblyReference.cache
+│   │   │       │   CartService.csproj.BuildWithSkipAnalyzers
+│   │   │       │   CartService.csproj.CoreCompileInputs.cache
+│   │   │       │   CartService.csproj.FileListAbsolute.txt
+│   │   │       │   CartService.dll
+│   │   │       │   CartService.GeneratedMSBuildEditorConfig.editorconfig
+│   │   │       │   CartService.genruntimeconfig.cache
+│   │   │       │   CartService.GlobalUsings.g.cs
+│   │   │       │   CartService.MvcApplicationPartsAssemblyInfo.cache
+│   │   │       │   CartService.MvcApplicationPartsAssemblyInfo.cs
+│   │   │       │   CartService.pdb
+│   │   │       │   CartService.sourcelink.json
+│   │   │       │   staticwebassets.build.endpoints.json
+│   │   │       │   staticwebassets.build.json
+│   │   │       │   staticwebassets.references.upToDateCheck.txt
+│   │   │       │   staticwebassets.removed.txt
+│   │   │       │
+│   │   │       ├───EndpointInfo
+│   │   │       │       CartService.json
+│   │   │       │       CartService.OpenApiFiles.cache
+│   │   │       │
+│   │   │       ├───ref
+│   │   │       │       CartService.dll
+│   │   │       │
+│   │   │       ├───refint
+│   │   │       │       CartService.dll
+│   │   │       │
+│   │   │       └───staticwebassets
+│   │   │               msbuild.build.CartService.props
+│   │   │               msbuild.buildMultiTargeting.CartService.props
+│   │   │               msbuild.buildTransitive.CartService.props
+│   │   │
+│   │   └───Release
+│   │       └───net8.0
+│   │               .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │               CartService.AssemblyInfo.cs
+│   │               CartService.AssemblyInfoInputs.cache
+│   │               CartService.assets.cache
+│   │               CartService.csproj.AssemblyReference.cache
+│   │               CartService.GeneratedMSBuildEditorConfig.editorconfig
+│   │               CartService.GlobalUsings.g.cs
+│   │
+│   ├───Properties
+│   │       launchSettings.json
+│   │
+│   ├───Repositories
+│   │   │   ICartRepository.cs
+│   │   │
+│   │   └───Impl
+│   │           CartRepositoryImpl.cs
+│   │
+│   └───Services
+│       │   ICartService.cs
+│       │
+│       └───Impl
+│               CartServiceImpl.cs
+│
+├───ConsulServiceDiscovery
+│   │   appsettings.Development.json
+│   │   appsettings.json
+│   │   ConsulServiceDiscovery.csproj
+│   │   ConsulServiceDiscovery.csproj.user
+│   │   ConsulServiceDiscovery.http
+│   │   Dockerfile
+│   │   Program.cs
+│   │   WeatherForecast.cs
+│   │
+│   ├───bin
+│   │   └───Debug
+│   │       └───net8.0
+│   │           │   appsettings.Development.json
+│   │           │   appsettings.json
+│   │           │   Consul.dll
+│   │           │   ConsulServiceDiscovery.deps.json
+│   │           │   ConsulServiceDiscovery.dll
+│   │           │   ConsulServiceDiscovery.exe
+│   │           │   ConsulServiceDiscovery.pdb
+│   │           │   ConsulServiceDiscovery.runtimeconfig.json
+│   │           │   ConsulServiceDiscovery.staticwebassets.endpoints.json
+│   │           │   FluentValidation.dll
+│   │           │   Fractions.dll
+│   │           │   HealthChecks.Consul.dll
+│   │           │   HealthChecks.UI.Core.dll
+│   │           │   HealthChecks.UI.Data.dll
+│   │           │   HealthChecks.UI.dll
+│   │           │   Humanizer.dll
+│   │           │   IdentityModel.dll
+│   │           │   IdentityModel.OidcClient.dll
+│   │           │   IPAddressRange.dll
+│   │           │   KubernetesClient.dll
+│   │           │   Microsoft.AspNetCore.JsonPatch.dll
+│   │           │   Microsoft.AspNetCore.MiddlewareAnalysis.dll
+│   │           │   Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+│   │           │   Microsoft.Bcl.AsyncInterfaces.dll
+│   │           │   Microsoft.CodeAnalysis.CSharp.dll
+│   │           │   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+│   │           │   Microsoft.CodeAnalysis.dll
+│   │           │   Microsoft.CodeAnalysis.Workspaces.dll
+│   │           │   Microsoft.EntityFrameworkCore.Abstractions.dll
+│   │           │   Microsoft.EntityFrameworkCore.Design.dll
+│   │           │   Microsoft.EntityFrameworkCore.dll
+│   │           │   Microsoft.EntityFrameworkCore.Relational.dll
+│   │           │   Microsoft.Extensions.Caching.Memory.dll
+│   │           │   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+│   │           │   Microsoft.Extensions.DependencyInjection.dll
+│   │           │   Microsoft.Extensions.DependencyModel.dll
+│   │           │   Microsoft.Extensions.DiagnosticAdapter.dll
+│   │           │   Microsoft.Extensions.Diagnostics.Abstractions.dll
+│   │           │   Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+│   │           │   Microsoft.Extensions.Diagnostics.HealthChecks.dll
+│   │           │   Microsoft.Extensions.Hosting.Abstractions.dll
+│   │           │   Microsoft.Extensions.Logging.Abstractions.dll
+│   │           │   Microsoft.Extensions.Logging.dll
+│   │           │   Microsoft.Extensions.Options.dll
+│   │           │   Microsoft.IdentityModel.Abstractions.dll
+│   │           │   Microsoft.IdentityModel.JsonWebTokens.dll
+│   │           │   Microsoft.IdentityModel.Logging.dll
+│   │           │   Microsoft.IdentityModel.Tokens.dll
+│   │           │   Microsoft.OpenApi.dll
+│   │           │   Mono.TextTemplating.dll
+│   │           │   Newtonsoft.Json.Bson.dll
+│   │           │   Newtonsoft.Json.dll
+│   │           │   Ocelot.dll
+│   │           │   Ocelot.Provider.Consul.dll
+│   │           │   Swashbuckle.AspNetCore.Swagger.dll
+│   │           │   Swashbuckle.AspNetCore.SwaggerGen.dll
+│   │           │   Swashbuckle.AspNetCore.SwaggerUI.dll
+│   │           │   System.CodeDom.dll
+│   │           │   System.Composition.AttributedModel.dll
+│   │           │   System.Composition.Convention.dll
+│   │           │   System.Composition.Hosting.dll
+│   │           │   System.Composition.Runtime.dll
+│   │           │   System.Composition.TypedParts.dll
+│   │           │   System.IdentityModel.Tokens.Jwt.dll
+│   │           │   YamlDotNet.dll
+│   │           │
+│   │           ├───cs
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───de
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───es
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───fr
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───it
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───ja
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───ko
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───pl
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───pt-BR
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───ru
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───tr
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           ├───zh-Hans
+│   │           │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │           │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │           │       Microsoft.CodeAnalysis.resources.dll
+│   │           │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │           │
+│   │           └───zh-Hant
+│   │                   Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │                   Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │                   Microsoft.CodeAnalysis.resources.dll
+│   │                   Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │
+│   ├───Configuration
+│   │       ConsulServiceRegistration.cs
+│   │
+│   ├───Controllers
+│   │       WeatherForecastController.cs
+│   │
+│   ├───obj
+│   │   │   ConsulServiceDiscovery.csproj.nuget.dgspec.json
+│   │   │   ConsulServiceDiscovery.csproj.nuget.g.props
+│   │   │   ConsulServiceDiscovery.csproj.nuget.g.targets
+│   │   │   project.assets.json
+│   │   │   project.nuget.cache
+│   │   │   project.packagespec.json
+│   │   │   rider.project.model.nuget.info
+│   │   │   rider.project.restore.info
+│   │   │
+│   │   ├───Container
+│   │   │       ContainerDevelopmentMode.cache
+│   │   │       ContainerId.cache
+│   │   │       ContainerName.cache
+│   │   │       ContainerRunContext.cache
+│   │   │
+│   │   └───Debug
+│   │       └───net8.0
+│   │           │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │           │   apphost.exe
+│   │           │   ConsulSe.0717CD42.Up2Date
+│   │           │   ConsulServiceDiscovery.AssemblyInfo.cs
+│   │           │   ConsulServiceDiscovery.AssemblyInfoInputs.cache
+│   │           │   ConsulServiceDiscovery.assets.cache
+│   │           │   ConsulServiceDiscovery.csproj.AssemblyReference.cache
+│   │           │   ConsulServiceDiscovery.csproj.BuildWithSkipAnalyzers
+│   │           │   ConsulServiceDiscovery.csproj.CoreCompileInputs.cache
+│   │           │   ConsulServiceDiscovery.csproj.FileListAbsolute.txt
+│   │           │   ConsulServiceDiscovery.dll
+│   │           │   ConsulServiceDiscovery.GeneratedMSBuildEditorConfig.editorconfig
+│   │           │   ConsulServiceDiscovery.genruntimeconfig.cache
+│   │           │   ConsulServiceDiscovery.GlobalUsings.g.cs
+│   │           │   ConsulServiceDiscovery.MvcApplicationPartsAssemblyInfo.cache
+│   │           │   ConsulServiceDiscovery.MvcApplicationPartsAssemblyInfo.cs
+│   │           │   ConsulServiceDiscovery.pdb
+│   │           │   ConsulServiceDiscovery.sourcelink.json
+│   │           │   staticwebassets.build.endpoints.json
+│   │           │   staticwebassets.build.json
+│   │           │   staticwebassets.references.upToDateCheck.txt
+│   │           │   staticwebassets.removed.txt
+│   │           │
+│   │           ├───ref
+│   │           │       ConsulServiceDiscovery.dll
+│   │           │
+│   │           ├───refint
+│   │           │       ConsulServiceDiscovery.dll
+│   │           │
+│   │           └───staticwebassets
+│   │                   msbuild.build.ConsulServiceDiscovery.props
+│   │                   msbuild.buildMultiTargeting.ConsulServiceDiscovery.props
+│   │                   msbuild.buildTransitive.ConsulServiceDiscovery.props
+│   │
+│   └───Properties
+│           launchSettings.json
+│
+├───data
+│   └───mongodb
+│       │   collection-0-15139815638031488576.wt
+│       │   collection-0-1747053735660367892.wt
+│       │   collection-2-15139815638031488576.wt
+│       │   collection-4-15139815638031488576.wt
+│       │   collection-7-15139815638031488576.wt
+│       │   index-1-15139815638031488576.wt
+│       │   index-1-1747053735660367892.wt
+│       │   index-3-15139815638031488576.wt
+│       │   index-5-15139815638031488576.wt
+│       │   index-6-15139815638031488576.wt
+│       │   index-8-15139815638031488576.wt
+│       │   index-9-15139815638031488576.wt
+│       │   mongod.lock
+│       │   sizeStorer.wt
+│       │   storage.bson
+│       │   WiredTiger
+│       │   WiredTiger.lock
+│       │   WiredTiger.turtle
+│       │   WiredTiger.wt
+│       │   WiredTigerHS.wt
+│       │   _mdb_catalog.wt
+│       │
+│       ├───.mongodb
+│       │   └───mongosh
+│       │       │   67473122911d9a3139c1c18b_log
+│       │       │   67473122eef6502b29c1c18b_log
+│       │       │   67473364ae899356c4c1c18b_log
+│       │       │   6747339339c0473c97c1c18b_log
+│       │       │   674735e9743a2f6d67c1c18b_log
+│       │       │   config
+│       │       │   mongosh_repl_history
+│       │       │
+│       │       └───snippets
+│       │               index.bson.br
+│       │               package.json
+│       │
+│       ├───diagnostic.data
+│       │       metrics.2024-11-27T14-48-01Z-00000
+│       │       metrics.2024-11-27T14-48-17Z-00000
+│       │       metrics.2024-11-27T14-51-07Z-00000
+│       │       metrics.2024-11-27T14-56-15Z-00000
+│       │       metrics.2024-11-27T15-06-18Z-00000
+│       │       metrics.2024-12-03T10-51-44Z-00000
+│       │       metrics.2024-12-03T10-52-58Z-00000
+│       │       metrics.2024-12-03T10-55-53Z-00000
+│       │       metrics.2024-12-03T10-59-07Z-00000
+│       │       metrics.2024-12-03T11-04-11Z-00000
+│       │       metrics.2024-12-03T11-08-35Z-00000
+│       │       metrics.2024-12-15T16-17-37Z-00000
+│       │       metrics.2024-12-15T16-18-00Z-00000
+│       │       metrics.2024-12-17T15-56-52Z-00000
+│       │       metrics.2024-12-17T16-00-02Z-00000
+│       │
+│       └───journal
+│               WiredTigerLog.0000000015
+│               WiredTigerPreplog.0000000001
+│
+├───keys
+│       key-abc14754-9ff5-4bfd-a2c8-9fb65fc27020.xml
+│
+├───OcelotGateway
+│   │   appsetting.local.json
+│   │   appsettings.Development.json
+│   │   appsettings.json
+│   │   Configuration.cs
+│   │   Consul.cs
+│   │   Dockerfile
+│   │   ocelot.json
+│   │   OcelotGateway.csproj
+│   │   OcelotGateway.csproj.user
+│   │   OcelotGateway.http
+│   │   Program.cs
+│   │   WeatherForecast.cs
+│   │
+│   ├───bin
+│   │   ├───Debug
+│   │   │   └───net8.0
+│   │   │       │   appsetting.local.json
+│   │   │       │   appsettings.Development.json
+│   │   │       │   appsettings.json
+│   │   │       │   Consul.AspNetCore.dll
+│   │   │       │   Consul.dll
+│   │   │       │   dotenv.net.dll
+│   │   │       │   FluentValidation.dll
+│   │   │       │   IPAddressRange.dll
+│   │   │       │   Microsoft.AspNetCore.JsonPatch.dll
+│   │   │       │   Microsoft.AspNetCore.MiddlewareAnalysis.dll
+│   │   │       │   Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+│   │   │       │   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+│   │   │       │   Microsoft.Extensions.DependencyInjection.dll
+│   │   │       │   Microsoft.Extensions.DiagnosticAdapter.dll
+│   │   │       │   Microsoft.OpenApi.dll
+│   │   │       │   Newtonsoft.Json.Bson.dll
+│   │   │       │   Newtonsoft.Json.dll
+│   │   │       │   Ocelot.dll
+│   │   │       │   ocelot.json
+│   │   │       │   Ocelot.Provider.Consul.dll
+│   │   │       │   OcelotGateway.deps.json
+│   │   │       │   OcelotGateway.dll
+│   │   │       │   OcelotGateway.exe
+│   │   │       │   OcelotGateway.pdb
+│   │   │       │   OcelotGateway.runtimeconfig.json
+│   │   │       │   OcelotGateway.staticwebassets.endpoints.json
+│   │   │       │   Swashbuckle.AspNetCore.Swagger.dll
+│   │   │       │   Swashbuckle.AspNetCore.SwaggerGen.dll
+│   │   │       │   Swashbuckle.AspNetCore.SwaggerUI.dll
+│   │   │       │   System.IO.Pipelines.dll
+│   │   │       │   System.Text.Encodings.Web.dll
+│   │   │       │   System.Text.Json.dll
+│   │   │       │
+│   │   │       └───runtimes
+│   │   │           └───browser
+│   │   │               └───lib
+│   │   │                   └───net8.0
+│   │   │                           System.Text.Encodings.Web.dll
+│   │   │
+│   │   └───Release
+│   │       └───net8.0
+│   ├───Controllers
+│   │       WeatherForecastController.cs
+│   │
+│   ├───obj
+│   │   │   OcelotGateway.csproj.nuget.dgspec.json
+│   │   │   OcelotGateway.csproj.nuget.g.props
+│   │   │   OcelotGateway.csproj.nuget.g.targets
+│   │   │   project.assets.json
+│   │   │   project.nuget.cache
+│   │   │   project.packagespec.json
+│   │   │   rider.project.model.nuget.info
+│   │   │   rider.project.restore.info
+│   │   │
+│   │   ├───Container
+│   │   │       AbsoluteOutputAssemblyPath.cache
+│   │   │       AdditionalProbingPaths.cache
+│   │   │       ContainerCreationResult.cache
+│   │   │       ContainerDevelopmentMode.cache
+│   │   │       ContainerId.cache
+│   │   │       ContainerName.cache
+│   │   │       ContainerOperatingSystemFlavor.cache
+│   │   │       ContainerRunContext.cache
+│   │   │       DebuggeeArguments.cache
+│   │   │       DebuggeeKillProcessCommand.cache
+│   │   │       DebuggeeProgram.cache
+│   │   │       DebuggeeWorkingDirectory.cache
+│   │   │       DistrolessHelperSupported.cache
+│   │   │       FastModeProjectMountDirectory.cache
+│   │   │       ImageBuildContext.cache
+│   │   │       ImageId.cache
+│   │   │       LaunchedImageId.cache
+│   │   │       OperatingSystemName.cache
+│   │   │       TargetFramework.cache
+│   │   │       VolumeMappings.cache
+│   │   │       VolumeMappings2.cache
+│   │   │       VsDbgScript.cache
+│   │   │
+│   │   ├───Debug
+│   │   │   ├───net8.0
+│   │   │   │   │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │   │   │   │   ApiEndpoints.json
+│   │   │   │   │   apphost.exe
+│   │   │   │   │   OcelotGa.7CDE653C.Up2Date
+│   │   │   │   │   OcelotGateway.AssemblyInfo.cs
+│   │   │   │   │   OcelotGateway.AssemblyInfoInputs.cache
+│   │   │   │   │   OcelotGateway.assets.cache
+│   │   │   │   │   OcelotGateway.csproj.AssemblyReference.cache
+│   │   │   │   │   OcelotGateway.csproj.BuildWithSkipAnalyzers
+│   │   │   │   │   OcelotGateway.csproj.CoreCompileInputs.cache
+│   │   │   │   │   OcelotGateway.csproj.FileListAbsolute.txt
+│   │   │   │   │   OcelotGateway.dll
+│   │   │   │   │   OcelotGateway.GeneratedMSBuildEditorConfig.editorconfig
+│   │   │   │   │   OcelotGateway.genruntimeconfig.cache
+│   │   │   │   │   OcelotGateway.GlobalUsings.g.cs
+│   │   │   │   │   OcelotGateway.MvcApplicationPartsAssemblyInfo.cache
+│   │   │   │   │   OcelotGateway.MvcApplicationPartsAssemblyInfo.cs
+│   │   │   │   │   OcelotGateway.pdb
+│   │   │   │   │   OcelotGateway.sourcelink.json
+│   │   │   │   │   staticwebassets.build.endpoints.json
+│   │   │   │   │   staticwebassets.build.json
+│   │   │   │   │   staticwebassets.references.upToDateCheck.txt
+│   │   │   │   │   staticwebassets.removed.txt
+│   │   │   │   │
+│   │   │   │   ├───EndpointInfo
+│   │   │   │   │       OcelotGateway.json
+│   │   │   │   │       OcelotGateway.OpenApiFiles.cache
+│   │   │   │   │
+│   │   │   │   ├───ref
+│   │   │   │   │       OcelotGateway.dll
+│   │   │   │   │
+│   │   │   │   ├───refint
+│   │   │   │   │       OcelotGateway.dll
+│   │   │   │   │
+│   │   │   │   └───staticwebassets
+│   │   │   │           msbuild.build.OcelotGateway.props
+│   │   │   │           msbuild.buildMultiTargeting.OcelotGateway.props
+│   │   │   │           msbuild.buildTransitive.OcelotGateway.props
+│   │   │   │
+│   │   │   └───net9.0
+│   │   │           .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+│   │   │           OcelotGateway.AssemblyInfo.cs
+│   │   │           OcelotGateway.AssemblyInfoInputs.cache
+│   │   │           OcelotGateway.assets.cache
+│   │   │           OcelotGateway.csproj.AssemblyReference.cache
+│   │   │           OcelotGateway.GeneratedMSBuildEditorConfig.editorconfig
+│   │   │           OcelotGateway.GlobalUsings.g.cs
+│   │   │           staticwebassets.removed.txt
+│   │   │
+│   │   └───Release
+│   │       └───net8.0
+│   │           │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │           │   OcelotGateway.AssemblyInfo.cs
+│   │           │   OcelotGateway.AssemblyInfoInputs.cache
+│   │           │   OcelotGateway.assets.cache
+│   │           │   OcelotGateway.csproj.AssemblyReference.cache
+│   │           │   OcelotGateway.GeneratedMSBuildEditorConfig.editorconfig
+│   │           │   OcelotGateway.GlobalUsings.g.cs
+│   │           │
+│   │           ├───ref
+│   │           └───refint
+│   └───Properties
+│           launchSettings.json
+│
+├───OrderService
+│   │   appsettings.Development.json
+│   │   appsettings.json
+│   │   Dockerfile
+│   │   OrderService.csproj
+│   │   OrderService.csproj.user
+│   │   OrderService.http
+│   │   Program.cs
+│   │   WeatherForecast.cs
+│   │
+│   ├───bin
+│   │   ├───Debug
+│   │   │   └───net8.0
+│   │   │       │   appsettings.Development.json
+│   │   │       │   appsettings.json
+│   │   │       │   AutoMapper.dll
+│   │   │       │   dotenv.net.dll
+│   │   │       │   Humanizer.dll
+│   │   │       │   Microsoft.Bcl.AsyncInterfaces.dll
+│   │   │       │   Microsoft.Build.Locator.dll
+│   │   │       │   Microsoft.CodeAnalysis.CSharp.dll
+│   │   │       │   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+│   │   │       │   Microsoft.CodeAnalysis.dll
+│   │   │       │   Microsoft.CodeAnalysis.Workspaces.dll
+│   │   │       │   Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+│   │   │       │   Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.Abstractions.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.Design.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.Relational.dll
+│   │   │       │   Microsoft.Extensions.Caching.Abstractions.dll
+│   │   │       │   Microsoft.Extensions.Caching.Memory.dll
+│   │   │       │   Microsoft.Extensions.Configuration.Abstractions.dll
+│   │   │       │   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+│   │   │       │   Microsoft.Extensions.DependencyInjection.dll
+│   │   │       │   Microsoft.Extensions.DependencyModel.dll
+│   │   │       │   Microsoft.Extensions.Logging.Abstractions.dll
+│   │   │       │   Microsoft.Extensions.Logging.dll
+│   │   │       │   Microsoft.Extensions.Options.dll
+│   │   │       │   Microsoft.Extensions.Primitives.dll
+│   │   │       │   Microsoft.OpenApi.dll
+│   │   │       │   Mono.TextTemplating.dll
+│   │   │       │   Newtonsoft.Json.dll
+│   │   │       │   Npgsql.dll
+│   │   │       │   Npgsql.EntityFrameworkCore.PostgreSQL.dll
+│   │   │       │   OrderService.deps.json
+│   │   │       │   OrderService.dll
+│   │   │       │   OrderService.exe
+│   │   │       │   OrderService.pdb
+│   │   │       │   OrderService.runtimeconfig.json
+│   │   │       │   OrderService.staticwebassets.endpoints.json
+│   │   │       │   RestSharp.dll
+│   │   │       │   Swashbuckle.AspNetCore.Swagger.dll
+│   │   │       │   Swashbuckle.AspNetCore.SwaggerGen.dll
+│   │   │       │   Swashbuckle.AspNetCore.SwaggerUI.dll
+│   │   │       │   System.CodeDom.dll
+│   │   │       │   System.Composition.AttributedModel.dll
+│   │   │       │   System.Composition.Convention.dll
+│   │   │       │   System.Composition.Hosting.dll
+│   │   │       │   System.Composition.Runtime.dll
+│   │   │       │   System.Composition.TypedParts.dll
+│   │   │       │   System.Diagnostics.DiagnosticSource.dll
+│   │   │       │   System.IO.Pipelines.dll
+│   │   │       │   System.Text.Encodings.Web.dll
+│   │   │       │   System.Text.Json.dll
+│   │   │       │
+│   │   │       ├───cs
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───de
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───es
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───fr
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───it
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───ja
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───ko
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───pl
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───pt-BR
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───ru
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───runtimes
+│   │   │       │   └───browser
+│   │   │       │       └───lib
+│   │   │       │           └───net8.0
+│   │   │       │                   System.Text.Encodings.Web.dll
+│   │   │       │
+│   │   │       ├───tr
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───zh-Hans
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       └───zh-Hant
+│   │   │               Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │               Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │               Microsoft.CodeAnalysis.resources.dll
+│   │   │               Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │               Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │
+│   │   └───Release
+│   │       └───net8.0
+│   ├───Controllers
+│   │       MomoPaymentController.cs
+│   │       OrderController.cs
+│   │       WeatherForecastController.cs
+│   │
+│   ├───Data
+│   │       BaseEntity.cs
+│   │       MomopaymentRequest.cs
+│   │       Order.cs
+│   │       OrderDbContext.cs
+│   │       OrderItem.cs
+│   │       ShippingDetails.cs
+│   │
+│   ├───Helpers
+│   │       BaseEnum.cs
+│   │       Mapper.cs
+│   │
+│   ├───Migrations
+│   │       20250410102808_InitialCreate.cs
+│   │       20250410102808_InitialCreate.Designer.cs
+│   │       20250410141651_AddIndex.cs
+│   │       20250410141651_AddIndex.Designer.cs
+│   │       OrderDbContextModelSnapshot.cs
+│   │
+│   ├───Models
+│   │       MomoCreatePaymentResponseModel.cs
+│   │       MomoExecuteResponseModel.cs
+│   │       MomoModel.cs
+│   │       MomoOptionModel.cs
+│   │       OrderModel.cs
+│   │
+│   ├───obj
+│   │   │   OrderService.csproj.EntityFrameworkCore.targets
+│   │   │   OrderService.csproj.nuget.dgspec.json
+│   │   │   OrderService.csproj.nuget.g.props
+│   │   │   OrderService.csproj.nuget.g.targets
+│   │   │   OrderService.EntityFrameworkCore.targets
+│   │   │   project.assets.json
+│   │   │   project.nuget.cache
+│   │   │   project.packagespec.json
+│   │   │   rider.project.model.nuget.info
+│   │   │   rider.project.restore.info
+│   │   │
+│   │   ├───Container
+│   │   │       ContainerDevelopmentMode.cache
+│   │   │       ContainerId.cache
+│   │   │       ContainerName.cache
+│   │   │       ContainerOperatingSystemFlavor.cache
+│   │   │       ContainerRunContext.cache
+│   │   │       OperatingSystemName.cache
+│   │   │       TargetFramework.cache
+│   │   │
+│   │   ├───Debug
+│   │   │   └───net8.0
+│   │   │       │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │   │       │   ApiEndpoints.json
+│   │   │       │   apphost.exe
+│   │   │       │   OrderSer.4493321F.Up2Date
+│   │   │       │   OrderService.AssemblyInfo.cs
+│   │   │       │   OrderService.AssemblyInfoInputs.cache
+│   │   │       │   OrderService.assets.cache
+│   │   │       │   OrderService.csproj.AssemblyReference.cache
+│   │   │       │   OrderService.csproj.BuildWithSkipAnalyzers
+│   │   │       │   OrderService.csproj.CoreCompileInputs.cache
+│   │   │       │   OrderService.csproj.FileListAbsolute.txt
+│   │   │       │   OrderService.dll
+│   │   │       │   OrderService.GeneratedMSBuildEditorConfig.editorconfig
+│   │   │       │   OrderService.genruntimeconfig.cache
+│   │   │       │   OrderService.GlobalUsings.g.cs
+│   │   │       │   OrderService.MvcApplicationPartsAssemblyInfo.cache
+│   │   │       │   OrderService.MvcApplicationPartsAssemblyInfo.cs
+│   │   │       │   OrderService.pdb
+│   │   │       │   OrderService.sourcelink.json
+│   │   │       │   staticwebassets.build.endpoints.json
+│   │   │       │   staticwebassets.build.json
+│   │   │       │   staticwebassets.references.upToDateCheck.txt
+│   │   │       │   staticwebassets.removed.txt
+│   │   │       │
+│   │   │       ├───EndpointInfo
+│   │   │       │       OrderService.json
+│   │   │       │       OrderService.OpenApiFiles.cache
+│   │   │       │
+│   │   │       ├───ref
+│   │   │       │       OrderService.dll
+│   │   │       │
+│   │   │       ├───refint
+│   │   │       │       OrderService.dll
+│   │   │       │
+│   │   │       └───staticwebassets
+│   │   │               msbuild.build.OrderService.props
+│   │   │               msbuild.buildMultiTargeting.OrderService.props
+│   │   │               msbuild.buildTransitive.OrderService.props
+│   │   │
+│   │   └───Release
+│   │       └───net8.0
+│   │           │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │           │   OrderService.AssemblyInfo.cs
+│   │           │   OrderService.AssemblyInfoInputs.cache
+│   │           │   OrderService.assets.cache
+│   │           │   OrderService.csproj.AssemblyReference.cache
+│   │           │   OrderService.GeneratedMSBuildEditorConfig.editorconfig
+│   │           │   OrderService.GlobalUsings.g.cs
+│   │           │
+│   │           ├───ref
+│   │           └───refint
+│   ├───Properties
+│   │       launchSettings.json
+│   │
+│   ├───Repositories
+│   │   │   IOrderRepository.cs
+│   │   │
+│   │   └───Impl
+│   │           OrderRepositoryImpl.cs
+│   │
+│   └───Services
+│       │   IMomoService.cs
+│       │   IOrderService.cs
+│       │
+│       └───Impl
+│               MomoServiceImpl.cs
+│               OrderServiceImpl.cs
+│
+├───UserService
+│   │   appsettings.Development.json
+│   │   appsettings.json
+│   │   Dockerfile
+│   │   Program.cs
+│   │   UserService.csproj
+│   │   UserService.csproj.user
+│   │   UserService.http
+│   │   WeatherForecast.cs
+│   │
+│   ├───bin
+│   │   ├───Debug
+│   │   │   ├───net8.0
+│   │   │   │   │   appsettings.Development.json
+│   │   │   │   │   appsettings.json
+│   │   │   │   │   AutoMapper.dll
+│   │   │   │   │   CloudinaryDotNet.dll
+│   │   │   │   │   dotenv.net.dll
+│   │   │   │   │   Humanizer.dll
+│   │   │   │   │   Microsoft.AspNetCore.Authentication.JwtBearer.dll
+│   │   │   │   │   Microsoft.AspNetCore.Cryptography.Internal.dll
+│   │   │   │   │   Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+│   │   │   │   │   Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+│   │   │   │   │   Microsoft.Bcl.AsyncInterfaces.dll
+│   │   │   │   │   Microsoft.CodeAnalysis.CSharp.dll
+│   │   │   │   │   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+│   │   │   │   │   Microsoft.CodeAnalysis.dll
+│   │   │   │   │   Microsoft.CodeAnalysis.Workspaces.dll
+│   │   │   │   │   Microsoft.EntityFrameworkCore.Abstractions.dll
+│   │   │   │   │   Microsoft.EntityFrameworkCore.Design.dll
+│   │   │   │   │   Microsoft.EntityFrameworkCore.dll
+│   │   │   │   │   Microsoft.EntityFrameworkCore.Relational.dll
+│   │   │   │   │   Microsoft.Extensions.Caching.Memory.dll
+│   │   │   │   │   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+│   │   │   │   │   Microsoft.Extensions.DependencyInjection.dll
+│   │   │   │   │   Microsoft.Extensions.DependencyModel.dll
+│   │   │   │   │   Microsoft.Extensions.Identity.Core.dll
+│   │   │   │   │   Microsoft.Extensions.Identity.Stores.dll
+│   │   │   │   │   Microsoft.Extensions.Logging.Abstractions.dll
+│   │   │   │   │   Microsoft.Extensions.Logging.dll
+│   │   │   │   │   Microsoft.Extensions.Options.dll
+│   │   │   │   │   Microsoft.IdentityModel.Abstractions.dll
+│   │   │   │   │   Microsoft.IdentityModel.JsonWebTokens.dll
+│   │   │   │   │   Microsoft.IdentityModel.Logging.dll
+│   │   │   │   │   Microsoft.IdentityModel.Protocols.dll
+│   │   │   │   │   Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+│   │   │   │   │   Microsoft.IdentityModel.Tokens.dll
+│   │   │   │   │   Microsoft.OpenApi.dll
+│   │   │   │   │   Mono.TextTemplating.dll
+│   │   │   │   │   Newtonsoft.Json.dll
+│   │   │   │   │   Npgsql.dll
+│   │   │   │   │   Npgsql.EntityFrameworkCore.PostgreSQL.dll
+│   │   │   │   │   Swashbuckle.AspNetCore.Swagger.dll
+│   │   │   │   │   Swashbuckle.AspNetCore.SwaggerGen.dll
+│   │   │   │   │   Swashbuckle.AspNetCore.SwaggerUI.dll
+│   │   │   │   │   System.CodeDom.dll
+│   │   │   │   │   System.Composition.AttributedModel.dll
+│   │   │   │   │   System.Composition.Convention.dll
+│   │   │   │   │   System.Composition.Hosting.dll
+│   │   │   │   │   System.Composition.Runtime.dll
+│   │   │   │   │   System.Composition.TypedParts.dll
+│   │   │   │   │   System.IdentityModel.Tokens.Jwt.dll
+│   │   │   │   │   System.IO.Pipelines.dll
+│   │   │   │   │   System.Text.Encodings.Web.dll
+│   │   │   │   │   System.Text.Json.dll
+│   │   │   │   │   UserService.deps.json
+│   │   │   │   │   UserService.dll
+│   │   │   │   │   UserService.exe
+│   │   │   │   │   UserService.pdb
+│   │   │   │   │   UserService.runtimeconfig.json
+│   │   │   │   │   UserService.staticwebassets.endpoints.json
+│   │   │   │   │
+│   │   │   │   ├───cs
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───de
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───es
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───fr
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───it
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───ja
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───ko
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───pl
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───pt-BR
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───ru
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───runtimes
+│   │   │   │   │   └───browser
+│   │   │   │   │       └───lib
+│   │   │   │   │           └───net8.0
+│   │   │   │   │                   System.Text.Encodings.Web.dll
+│   │   │   │   │
+│   │   │   │   ├───tr
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   ├───zh-Hans
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.resources.dll
+│   │   │   │   │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │   │
+│   │   │   │   └───zh-Hant
+│   │   │   │           Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │   │           Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │   │           Microsoft.CodeAnalysis.resources.dll
+│   │   │   │           Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │   │
+│   │   │   └───net9.0
+│   │   │       │   appsettings.Development.json
+│   │   │       │   appsettings.json
+│   │   │       │   AutoMapper.dll
+│   │   │       │   Humanizer.dll
+│   │   │       │   Microsoft.AspNetCore.Authentication.JwtBearer.dll
+│   │   │       │   Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+│   │   │       │   Microsoft.Bcl.AsyncInterfaces.dll
+│   │   │       │   Microsoft.Build.Locator.dll
+│   │   │       │   Microsoft.CodeAnalysis.CSharp.dll
+│   │   │       │   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+│   │   │       │   Microsoft.CodeAnalysis.dll
+│   │   │       │   Microsoft.CodeAnalysis.Workspaces.dll
+│   │   │       │   Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+│   │   │       │   Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.Abstractions.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.Design.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.dll
+│   │   │       │   Microsoft.EntityFrameworkCore.Relational.dll
+│   │   │       │   Microsoft.Extensions.DependencyModel.dll
+│   │   │       │   Microsoft.IdentityModel.Abstractions.dll
+│   │   │       │   Microsoft.IdentityModel.JsonWebTokens.dll
+│   │   │       │   Microsoft.IdentityModel.Logging.dll
+│   │   │       │   Microsoft.IdentityModel.Protocols.dll
+│   │   │       │   Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+│   │   │       │   Microsoft.IdentityModel.Tokens.dll
+│   │   │       │   Microsoft.OpenApi.dll
+│   │   │       │   Mono.TextTemplating.dll
+│   │   │       │   Npgsql.dll
+│   │   │       │   Npgsql.EntityFrameworkCore.PostgreSQL.dll
+│   │   │       │   Swashbuckle.AspNetCore.Swagger.dll
+│   │   │       │   Swashbuckle.AspNetCore.SwaggerGen.dll
+│   │   │       │   Swashbuckle.AspNetCore.SwaggerUI.dll
+│   │   │       │   System.CodeDom.dll
+│   │   │       │   System.Composition.AttributedModel.dll
+│   │   │       │   System.Composition.Convention.dll
+│   │   │       │   System.Composition.Hosting.dll
+│   │   │       │   System.Composition.Runtime.dll
+│   │   │       │   System.Composition.TypedParts.dll
+│   │   │       │   System.IdentityModel.Tokens.Jwt.dll
+│   │   │       │   UserService.deps.json
+│   │   │       │   UserService.dll
+│   │   │       │   UserService.exe
+│   │   │       │   UserService.pdb
+│   │   │       │   UserService.runtimeconfig.json
+│   │   │       │   UserService.staticwebassets.endpoints.json
+│   │   │       │
+│   │   │       ├───cs
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───de
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───es
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───fr
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───it
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───ja
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───ko
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───pl
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───pt-BR
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───ru
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───tr
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       ├───zh-Hans
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │       │
+│   │   │       └───zh-Hant
+│   │   │               Microsoft.CodeAnalysis.CSharp.resources.dll
+│   │   │               Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+│   │   │               Microsoft.CodeAnalysis.resources.dll
+│   │   │               Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+│   │   │               Microsoft.CodeAnalysis.Workspaces.resources.dll
+│   │   │
+│   │   └───Release
+│   │       └───net8.0
+│   ├───Controllers
+│   │       AccountController.cs
+│   │       WeatherForecastController.cs
+│   │
+│   ├───Data
+│   │       ApplicationUser.cs
+│   │       Seed.cs
+│   │       UserDbContext.cs
+│   │
+│   ├───Helpers
+│   │       ConsulHelper.cs
+│   │       Mappers.cs
+│   │       StaticEntities.cs
+│   │
+│   ├───Migrations
+│   │       20241125033414_InitCreate.cs
+│   │       20241125033414_InitCreate.Designer.cs
+│   │       20250406064315_IsActiveField.cs
+│   │       20250406064315_IsActiveField.Designer.cs
+│   │       UserDbContextModelSnapshot.cs
+│   │
+│   ├───Models
+│   │       SignInModel.cs
+│   │       SignUpModel.cs
+│   │       UserModel.cs
+│   │
+│   ├───obj
+│   │   │   project.assets.json
+│   │   │   project.nuget.cache
+│   │   │   project.packagespec.json
+│   │   │   rider.project.model.nuget.info
+│   │   │   rider.project.restore.info
+│   │   │   UserService.csproj.EntityFrameworkCore.targets
+│   │   │   UserService.csproj.nuget.dgspec.json
+│   │   │   UserService.csproj.nuget.g.props
+│   │   │   UserService.csproj.nuget.g.targets
+│   │   │
+│   │   ├───Container
+│   │   │       AbsoluteOutputAssemblyPath.cache
+│   │   │       AdditionalProbingPaths.cache
+│   │   │       ContainerDevelopmentMode.cache
+│   │   │       ContainerId.cache
+│   │   │       ContainerName.cache
+│   │   │       ContainerOperatingSystemFlavor.cache
+│   │   │       ContainerRunContext.cache
+│   │   │       DebuggeeArguments.cache
+│   │   │       DebuggeeKillProcessCommand.cache
+│   │   │       DebuggeeProgram.cache
+│   │   │       DebuggeeWorkingDirectory.cache
+│   │   │       DistrolessHelperSupported.cache
+│   │   │       FastModeProjectMountDirectory.cache
+│   │   │       ImageBuildContext.cache
+│   │   │       ImageId.cache
+│   │   │       LaunchedImageId.cache
+│   │   │       OperatingSystemName.cache
+│   │   │       TargetFramework.cache
+│   │   │       VolumeMappings.cache
+│   │   │       VolumeMappings2.cache
+│   │   │       VsDbgScript.cache
+│   │   │
+│   │   ├───Debug
+│   │   │   ├───net8.0
+│   │   │   │   │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │   │   │   │   ApiEndpoints.json
+│   │   │   │   │   apphost.exe
+│   │   │   │   │   staticwebassets.build.endpoints.json
+│   │   │   │   │   staticwebassets.build.json
+│   │   │   │   │   staticwebassets.references.upToDateCheck.txt
+│   │   │   │   │   staticwebassets.removed.txt
+│   │   │   │   │   UserServ.57764DC8.Up2Date
+│   │   │   │   │   UserService.AssemblyInfo.cs
+│   │   │   │   │   UserService.AssemblyInfoInputs.cache
+│   │   │   │   │   UserService.assets.cache
+│   │   │   │   │   UserService.csproj.AssemblyReference.cache
+│   │   │   │   │   UserService.csproj.BuildWithSkipAnalyzers
+│   │   │   │   │   UserService.csproj.CoreCompileInputs.cache
+│   │   │   │   │   UserService.csproj.FileListAbsolute.txt
+│   │   │   │   │   UserService.dll
+│   │   │   │   │   UserService.GeneratedMSBuildEditorConfig.editorconfig
+│   │   │   │   │   UserService.genruntimeconfig.cache
+│   │   │   │   │   UserService.GlobalUsings.g.cs
+│   │   │   │   │   UserService.MvcApplicationPartsAssemblyInfo.cache
+│   │   │   │   │   UserService.MvcApplicationPartsAssemblyInfo.cs
+│   │   │   │   │   UserService.pdb
+│   │   │   │   │   UserService.sourcelink.json
+│   │   │   │   │
+│   │   │   │   ├───EndpointInfo
+│   │   │   │   │       UserService.OpenApiFiles.cache
+│   │   │   │   │       UserService_ProductService.json
+│   │   │   │   │       UserService_UserService.json
+│   │   │   │   │
+│   │   │   │   ├───ref
+│   │   │   │   │       UserService.dll
+│   │   │   │   │
+│   │   │   │   ├───refint
+│   │   │   │   │       UserService.dll
+│   │   │   │   │
+│   │   │   │   └───staticwebassets
+│   │   │   │           msbuild.build.UserService.props
+│   │   │   │           msbuild.buildMultiTargeting.UserService.props
+│   │   │   │           msbuild.buildTransitive.UserService.props
+│   │   │   │
+│   │   │   └───net9.0
+│   │   │       │   .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+│   │   │       │   ApiEndpoints.json
+│   │   │       │   apphost.exe
+│   │   │       │   staticwebassets.build.endpoints.json
+│   │   │       │   staticwebassets.build.json
+│   │   │       │   staticwebassets.references.upToDateCheck.txt
+│   │   │       │   staticwebassets.removed.txt
+│   │   │       │   UserServ.57764DC8.Up2Date
+│   │   │       │   UserService.AssemblyInfo.cs
+│   │   │       │   UserService.AssemblyInfoInputs.cache
+│   │   │       │   UserService.assets.cache
+│   │   │       │   UserService.csproj.AssemblyReference.cache
+│   │   │       │   UserService.csproj.BuildWithSkipAnalyzers
+│   │   │       │   UserService.csproj.CoreCompileInputs.cache
+│   │   │       │   UserService.csproj.FileListAbsolute.txt
+│   │   │       │   UserService.dll
+│   │   │       │   UserService.GeneratedMSBuildEditorConfig.editorconfig
+│   │   │       │   UserService.genruntimeconfig.cache
+│   │   │       │   UserService.GlobalUsings.g.cs
+│   │   │       │   UserService.MvcApplicationPartsAssemblyInfo.cache
+│   │   │       │   UserService.MvcApplicationPartsAssemblyInfo.cs
+│   │   │       │   UserService.pdb
+│   │   │       │   UserService.sourcelink.json
+│   │   │       │
+│   │   │       ├───EndpointInfo
+│   │   │       │       UserService.OpenApiFiles.cache
+│   │   │       │       UserService_UserService.json
+│   │   │       │
+│   │   │       ├───ref
+│   │   │       │       UserService.dll
+│   │   │       │
+│   │   │       ├───refint
+│   │   │       │       UserService.dll
+│   │   │       │
+│   │   │       └───staticwebassets
+│   │   │               msbuild.build.UserService.props
+│   │   │               msbuild.buildMultiTargeting.UserService.props
+│   │   │               msbuild.buildTransitive.UserService.props
+│   │   │
+│   │   └───Release
+│   │       └───net8.0
+│   │           │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+│   │           │   UserService.AssemblyInfo.cs
+│   │           │   UserService.AssemblyInfoInputs.cache
+│   │           │   UserService.assets.cache
+│   │           │   UserService.csproj.AssemblyReference.cache
+│   │           │   UserService.GeneratedMSBuildEditorConfig.editorconfig
+│   │           │   UserService.GlobalUsings.g.cs
+│   │           │
+│   │           ├───ref
+│   │           └───refint
+│   ├───Properties
+│   │       launchSettings.json
+│   │
+│   ├───Repositories
+│   │   │   IAccountRepository.cs
+│   │   │
+│   │   └───Impl
+│   │           AccountRepositoryImpl.cs
+│   │
+│   └───Services
+│       │   IAccountService.cs
+│       │
+│       └───Impl
+│               AccountServiceImpl.cs
+│
+└───WarehouseService
+    │   appsettings.Development.json
+    │   appsettings.json
+    │   Dockerfile
+    │   ProductService.csproj.user
+    │   ProductService.http
+    │   Program.cs
+    │   WarehouseService.csproj
+    │   WarehouseService.csproj.user
+    │   WeatherForecast.cs
+    │
+    ├───bin
+    │   ├───Debug
+    │   │   └───net8.0
+    │   │       │   appsettings.Development.json
+    │   │       │   appsettings.json
+    │   │       │   AutoMapper.dll
+    │   │       │   AWSSDK.Core.dll
+    │   │       │   AWSSDK.SecurityToken.dll
+    │   │       │   CloudinaryDotNet.dll
+    │   │       │   DnsClient.dll
+    │   │       │   dotenv.net.dll
+    │   │       │   Humanizer.dll
+    │   │       │   InventoryService.deps.json
+    │   │       │   InventoryService.exe
+    │   │       │   InventoryService.runtimeconfig.json
+    │   │       │   InventoryService.staticwebassets.endpoints.json
+    │   │       │   Microsoft.Bcl.AsyncInterfaces.dll
+    │   │       │   Microsoft.CodeAnalysis.CSharp.dll
+    │   │       │   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+    │   │       │   Microsoft.CodeAnalysis.dll
+    │   │       │   Microsoft.CodeAnalysis.Workspaces.dll
+    │   │       │   Microsoft.EntityFrameworkCore.Abstractions.dll
+    │   │       │   Microsoft.EntityFrameworkCore.Design.dll
+    │   │       │   Microsoft.EntityFrameworkCore.dll
+    │   │       │   Microsoft.EntityFrameworkCore.Relational.dll
+    │   │       │   Microsoft.Extensions.Caching.Memory.dll
+    │   │       │   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+    │   │       │   Microsoft.Extensions.DependencyInjection.dll
+    │   │       │   Microsoft.Extensions.DependencyModel.dll
+    │   │       │   Microsoft.Extensions.Logging.Abstractions.dll
+    │   │       │   Microsoft.Extensions.Logging.dll
+    │   │       │   Microsoft.Extensions.Options.dll
+    │   │       │   Microsoft.OpenApi.dll
+    │   │       │   MongoDB.Bson.dll
+    │   │       │   MongoDB.Driver.Core.dll
+    │   │       │   MongoDB.Driver.dll
+    │   │       │   MongoDB.Libmongocrypt.dll
+    │   │       │   Mono.TextTemplating.dll
+    │   │       │   Newtonsoft.Json.dll
+    │   │       │   ProductService.deps.json
+    │   │       │   ProductService.exe
+    │   │       │   ProductService.runtimeconfig.json
+    │   │       │   ProductService.staticwebassets.endpoints.json
+    │   │       │   SharpCompress.dll
+    │   │       │   Snappier.dll
+    │   │       │   Swashbuckle.AspNetCore.Swagger.dll
+    │   │       │   Swashbuckle.AspNetCore.SwaggerGen.dll
+    │   │       │   Swashbuckle.AspNetCore.SwaggerUI.dll
+    │   │       │   System.CodeDom.dll
+    │   │       │   System.Composition.AttributedModel.dll
+    │   │       │   System.Composition.Convention.dll
+    │   │       │   System.Composition.Hosting.dll
+    │   │       │   System.Composition.Runtime.dll
+    │   │       │   System.Composition.TypedParts.dll
+    │   │       │   System.IO.Pipelines.dll
+    │   │       │   System.Text.Encodings.Web.dll
+    │   │       │   System.Text.Json.dll
+    │   │       │   WarehouseService.deps.json
+    │   │       │   WarehouseService.dll
+    │   │       │   WarehouseService.exe
+    │   │       │   WarehouseService.pdb
+    │   │       │   WarehouseService.runtimeconfig.json
+    │   │       │   WarehouseService.staticwebassets.endpoints.json
+    │   │       │   ZstdSharp.dll
+    │   │       │
+    │   │       ├───cs
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───de
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───es
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───fr
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───it
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───ja
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───ko
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───pl
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───pt-BR
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───ru
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───runtimes
+    │   │       │   ├───browser
+    │   │       │   │   └───lib
+    │   │       │   │       └───net8.0
+    │   │       │   │               System.Text.Encodings.Web.dll
+    │   │       │   │
+    │   │       │   ├───linux
+    │   │       │   │   └───native
+    │   │       │   │           libmongocrypt.so
+    │   │       │   │
+    │   │       │   ├───osx
+    │   │       │   │   └───native
+    │   │       │   │           libmongocrypt.dylib
+    │   │       │   │
+    │   │       │   └───win
+    │   │       │       └───native
+    │   │       │               mongocrypt.dll
+    │   │       │
+    │   │       ├───tr
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       ├───zh-Hans
+    │   │       │       Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.resources.dll
+    │   │       │       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │       │
+    │   │       └───zh-Hant
+    │   │               Microsoft.CodeAnalysis.CSharp.resources.dll
+    │   │               Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    │   │               Microsoft.CodeAnalysis.resources.dll
+    │   │               Microsoft.CodeAnalysis.Workspaces.resources.dll
+    │   │
+    │   └───Release
+    │       └───net8.0
+    ├───Controllers
+    │       CategoryController.cs
+    │       InventoryController.cs
+    │       ProductController.cs
+    │       WeatherForecastController.cs
+    │
+    ├───Data
+    │   │   BaseEntity.cs
+    │   │   Category.cs
+    │   │   Inventory.cs
+    │   │   InventoryTransaction.cs
+    │   │   ProdCate.cs
+    │   │   Product.cs
+    │   │
+    │   └───MongoDB
+    │           MongoDbServices.cs
+    │           MongoDbSettings.cs
+    │
+    ├───Helpers
+    │       Mapper.cs
+    │
+    ├───Models
+    │       CategoryModel.cs
+    │       InventoryModel.cs
+    │       ProductModel.cs
+    │
+    ├───obj
+    │   │   InventoryService.csproj.nuget.dgspec.json
+    │   │   InventoryService.csproj.nuget.g.props
+    │   │   InventoryService.csproj.nuget.g.targets
+    │   │   ProductService.csproj.nuget.dgspec.json
+    │   │   ProductService.csproj.nuget.g.props
+    │   │   ProductService.csproj.nuget.g.targets
+    │   │   project.assets.json
+    │   │   project.nuget.cache
+    │   │   project.packagespec.json
+    │   │   rider.project.model.nuget.info
+    │   │   rider.project.restore.info
+    │   │   WarehouseService.csproj.nuget.dgspec.json
+    │   │   WarehouseService.csproj.nuget.g.props
+    │   │   WarehouseService.csproj.nuget.g.targets
+    │   │
+    │   ├───Container
+    │   │       AbsoluteOutputAssemblyPath.cache
+    │   │       AdditionalProbingPaths.cache
+    │   │       ContainerCreationResult.cache
+    │   │       ContainerDevelopmentMode.cache
+    │   │       ContainerId.cache
+    │   │       ContainerName.cache
+    │   │       ContainerOperatingSystemFlavor.cache
+    │   │       ContainerRunContext.cache
+    │   │       ContainerRuntimeID.cache
+    │   │       DebuggeeArguments.cache
+    │   │       DebuggeeKillProcessCommand.cache
+    │   │       DebuggeeProgram.cache
+    │   │       DebuggeeWorkingDirectory.cache
+    │   │       DistrolessHelperSupported.cache
+    │   │       FastModeProjectMountDirectory.cache
+    │   │       ImageBuildContext.cache
+    │   │       ImageId.cache
+    │   │       LaunchedImageId.cache
+    │   │       OperatingSystemName.cache
+    │   │       TargetFramework.cache
+    │   │       VolumeMappings.cache
+    │   │       VolumeMappings2.cache
+    │   │       VsDbgScript.cache
+    │   │
+    │   ├───Debug
+    │   │   └───net8.0
+    │   │       │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+    │   │       │   ApiEndpoints.json
+    │   │       │   apphost.exe
+    │   │       │   InventoryService.AssemblyInfo.cs
+    │   │       │   InventoryService.AssemblyInfoInputs.cache
+    │   │       │   InventoryService.assets.cache
+    │   │       │   InventoryService.csproj.AssemblyReference.cache
+    │   │       │   InventoryService.csproj.CoreCompileInputs.cache
+    │   │       │   InventoryService.csproj.FileListAbsolute.txt
+    │   │       │   InventoryService.dll
+    │   │       │   InventoryService.GeneratedMSBuildEditorConfig.editorconfig
+    │   │       │   InventoryService.genruntimeconfig.cache
+    │   │       │   InventoryService.GlobalUsings.g.cs
+    │   │       │   InventoryService.MvcApplicationPartsAssemblyInfo.cache
+    │   │       │   InventoryService.MvcApplicationPartsAssemblyInfo.cs
+    │   │       │   InventoryService.pdb
+    │   │       │   InventoryService.sourcelink.json
+    │   │       │   ProductS.A0FC5512.Up2Date
+    │   │       │   ProductService.AssemblyInfo.cs
+    │   │       │   ProductService.AssemblyInfoInputs.cache
+    │   │       │   ProductService.assets.cache
+    │   │       │   ProductService.csproj.AssemblyReference.cache
+    │   │       │   ProductService.csproj.BuildWithSkipAnalyzers
+    │   │       │   ProductService.csproj.CoreCompileInputs.cache
+    │   │       │   ProductService.csproj.FileListAbsolute.txt
+    │   │       │   ProductService.dll
+    │   │       │   ProductService.GeneratedMSBuildEditorConfig.editorconfig
+    │   │       │   ProductService.genruntimeconfig.cache
+    │   │       │   ProductService.GlobalUsings.g.cs
+    │   │       │   ProductService.MvcApplicationPartsAssemblyInfo.cache
+    │   │       │   ProductService.MvcApplicationPartsAssemblyInfo.cs
+    │   │       │   ProductService.pdb
+    │   │       │   ProductService.sourcelink.json
+    │   │       │   staticwebassets.build.endpoints.json
+    │   │       │   staticwebassets.build.json
+    │   │       │   staticwebassets.references.upToDateCheck.txt
+    │   │       │   staticwebassets.removed.txt
+    │   │       │   Warehous.01F3CEB4.Up2Date
+    │   │       │   WarehouseService.AssemblyInfo.cs
+    │   │       │   WarehouseService.AssemblyInfoInputs.cache
+    │   │       │   WarehouseService.assets.cache
+    │   │       │   WarehouseService.csproj.AssemblyReference.cache
+    │   │       │   WarehouseService.csproj.BuildWithSkipAnalyzers
+    │   │       │   WarehouseService.csproj.CoreCompileInputs.cache
+    │   │       │   WarehouseService.csproj.FileListAbsolute.txt
+    │   │       │   WarehouseService.dll
+    │   │       │   WarehouseService.GeneratedMSBuildEditorConfig.editorconfig
+    │   │       │   WarehouseService.genruntimeconfig.cache
+    │   │       │   WarehouseService.GlobalUsings.g.cs
+    │   │       │   WarehouseService.MvcApplicationPartsAssemblyInfo.cache
+    │   │       │   WarehouseService.MvcApplicationPartsAssemblyInfo.cs
+    │   │       │   WarehouseService.pdb
+    │   │       │   WarehouseService.sourcelink.json
+    │   │       │
+    │   │       ├───EndpointInfo
+    │   │       │       ProductService.json
+    │   │       │       ProductService.OpenApiFiles.cache
+    │   │       │       WarehouseService.json
+    │   │       │       WarehouseService.OpenApiFiles.cache
+    │   │       │
+    │   │       ├───ref
+    │   │       │       InventoryService.dll
+    │   │       │       ProductService.dll
+    │   │       │       WarehouseService.dll
+    │   │       │
+    │   │       ├───refint
+    │   │       │       InventoryService.dll
+    │   │       │       ProductService.dll
+    │   │       │       WarehouseService.dll
+    │   │       │
+    │   │       └───staticwebassets
+    │   │               msbuild.build.InventoryService.props
+    │   │               msbuild.build.ProductService.props
+    │   │               msbuild.build.WarehouseService.props
+    │   │               msbuild.buildMultiTargeting.InventoryService.props
+    │   │               msbuild.buildMultiTargeting.ProductService.props
+    │   │               msbuild.buildMultiTargeting.WarehouseService.props
+    │   │               msbuild.buildTransitive.InventoryService.props
+    │   │               msbuild.buildTransitive.ProductService.props
+    │   │               msbuild.buildTransitive.WarehouseService.props
+    │   │
+    │   └───Release
+    │       └───net8.0
+    │           │   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+    │           │   ProductService.AssemblyInfo.cs
+    │           │   ProductService.AssemblyInfoInputs.cache
+    │           │   ProductService.assets.cache
+    │           │   ProductService.csproj.AssemblyReference.cache
+    │           │   ProductService.GeneratedMSBuildEditorConfig.editorconfig
+    │           │   ProductService.GlobalUsings.g.cs
+    │           │
+    │           ├───ref
+    │           └───refint
+    ├───Properties
+    │       launchSettings.json
+    │
+    ├───Repositories
+    │   │   ICategoryRepository.cs
+    │   │   IInventoryRepository.cs
+    │   │   IProductRepository.cs
+    │   │
+    │   └───Impl
+    │           CategoryRepositoryImpl.cs
+    │           InventoryRepositoryImpl.cs
+    │           ProductRepositoryImpl.cs
+    │
+    └───Services
+        │   ICategoryService.cs
+        │   IInventoryService.cs
+        │   IProductService.cs
+        │
+        └───Impl
+                CategoryServiceImpl.cs
+                InventoryServiceImpl.cs
+                ProductServiceImpl.cs

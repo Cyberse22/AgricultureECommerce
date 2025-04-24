@@ -38,5 +38,12 @@ namespace CartService.Controllers
             var result = await _cartService.ClearCartAsync(userId);
             return result ? Ok(result) : BadRequest();
         }
+
+        [HttpGet("{userId}/items")]
+        public async Task<IActionResult> GetCartItemsAsync(string userId)
+        {
+            var result = await _cartService.GetCartItemAsync(userId);
+            return Ok(result);
+        }
     }
 }

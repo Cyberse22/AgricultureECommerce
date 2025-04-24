@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotGateway", "OcelotGate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartService", "CartService\CartService.csproj", "{9D459871-1318-4DE0-A246-6DEFEA7016F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductService", "ProductService\ProductService.csproj", "{F6ADE06F-0A3D-4A23-989C-3F925B55513F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseService", "WarehouseService\WarehouseService.csproj", "{F6ADE06F-0A3D-4A23-989C-3F925B55513F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "OrderService\OrderService.csproj", "{0DC3334F-A80A-414C-AF7B-1BBDBBFA35BE}"
 EndProject
@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		projectkey.env = projectkey.env
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsulServiceDiscovery", "ConsulServiceDiscovery\ConsulServiceDiscovery.csproj", "{BA214395-4BA7-400E-B6D6-01F7E18487A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceGateway", "ECommerceGateway\ECommerceGateway.csproj", "{9D7CA0E8-786A-4425-925B-CA64C7A09533}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,14 @@ Global
 		{0DC3334F-A80A-414C-AF7B-1BBDBBFA35BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC3334F-A80A-414C-AF7B-1BBDBBFA35BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC3334F-A80A-414C-AF7B-1BBDBBFA35BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA214395-4BA7-400E-B6D6-01F7E18487A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA214395-4BA7-400E-B6D6-01F7E18487A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA214395-4BA7-400E-B6D6-01F7E18487A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA214395-4BA7-400E-B6D6-01F7E18487A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D7CA0E8-786A-4425-925B-CA64C7A09533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D7CA0E8-786A-4425-925B-CA64C7A09533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D7CA0E8-786A-4425-925B-CA64C7A09533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D7CA0E8-786A-4425-925B-CA64C7A09533}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

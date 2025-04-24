@@ -13,5 +13,6 @@ namespace UserService.Repositories
         Task<bool> ChangePasswordAsync(string phoneNumber, string oldPassword, string newPassword);
         Task UpdateUserAsync(UserDbContext user);
         Task<ApplicationUser> GetCurrentUserAsync(string phoneNumber);
+        Task<bool> UpdateAvatarAsync(string phoneNumber, string avatar);
     }
 }

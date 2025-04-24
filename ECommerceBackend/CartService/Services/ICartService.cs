@@ -8,5 +8,6 @@ namespace CartService.Services
         Task<bool> ClearCartAsync(string userId);
         Task<CartModel> GetCartAsync(string UserId);
         Task<bool> RemoveItemFromCartAsync(string userId, string productId);
+        Task <List<CartItemModel>> GetCartItemAsync(string userId);
     }
 }

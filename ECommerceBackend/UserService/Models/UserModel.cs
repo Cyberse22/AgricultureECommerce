@@ -23,4 +23,10 @@ namespace UserService.Models
         [Compare("NewPassword")]
         public string ConfirmPassword { get ; set; }
     }
+
+    public class UserAvatar
+    {
+        public string? PhoneNumber { get; set; }
+        public IFormFile Avatar { get; set; }
+    }
 }

@@ -14,7 +14,11 @@ using UserService.Repositories.Impl;
 using UserService.Services;
 using UserService.Services.Impl;
 using System.Diagnostics;
+using CloudinaryDotNet;
 using Microsoft.AspNetCore.DataProtection;
+using UserService.Helpers;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.ServiceDiscovery;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("PostgreSQLConnection");
@@ -38,6 +42,11 @@ builder.Services.AddHttpContextAccessor();
 // Dependency Injection: AddScoped, AddTransient, AddSingleTon
 builder.Services.AddScoped<IAccountRepository, AccountRepositoryImpl>();
 builder.Services.AddScoped<IAccountService, AccountServiceImpl>();
+builder.Services.AddSingleton(new Cloudinary(new Account(
+    builder.Configuration["Cloudinary:CloudName"],
+    builder.Configuration["Cloudinary:ApiKey"],
+    builder.Configuration["Cloudinary:ApiSecret"]
+)));
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -105,6 +114,16 @@ builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(@"/keys"))
     .SetApplicationName("ECommerceMicroservice");
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", builder =>
+    {
+        builder.WithOrigins("http://localhost:7001")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -151,5 +170,15 @@ app.UseStaticFiles();
 app.UseAuthorization();
 app.UseAuthentication();
 app.MapControllers();
+
+//await ConsulHelper.RegisterService(
+//    app,
+//    serviceName: "user-service",
+//    serviceAddress: "host.docker.internal",
+//    servicePort: 7001,
+//    healthCheckUrl: "http://host.docker.internal:7001/health"
+//   );
+
+app.MapGet("/health", () => Results.Ok("UserService Healthy"));
 
 app.Run();

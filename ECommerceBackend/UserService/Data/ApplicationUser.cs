@@ -12,6 +12,7 @@ namespace UserService.Data
         public string? Gender { get; set; }
         public string? Address { get; set; }
         public string? Avatar { get; set; }
+        public bool? IsActive { get; set; } = true;
         [Required]
         [Phone]
         public override string? PhoneNumber { get; set; }

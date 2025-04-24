@@ -3,8 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
 using System.Security.Claims;
 using System.Text;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using UserService.Data;
 using UserService.Helpers;
 using UserService.Models;
@@ -20,8 +23,9 @@ namespace UserService.Services.Impl
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IMapper _mapper;
+        private readonly Cloudinary _cloudinary;
 
-        public AccountServiceImpl (IAccountRepository accountRepository, IConfiguration configuration, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IHttpContextAccessor contextAccessor, IMapper mapper)
+        public AccountServiceImpl (IAccountRepository accountRepository, IConfiguration configuration, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IHttpContextAccessor contextAccessor, IMapper mapper, Cloudinary cloudinary)
         {
             _accountRepository = accountRepository;
             _configuration = configuration;
@@ -29,6 +33,7 @@ namespace UserService.Services.Impl
             _roleManager = roleManager;
             _httpContextAccessor = contextAccessor;
             _mapper = mapper;
+            _cloudinary = cloudinary;
         }
 
         private async Task<string> GenerateJwtToken(string phoneNumber)
@@ -106,19 +111,47 @@ namespace UserService.Services.Impl
 
             if (userClaims == null || !userClaims.Identity.IsAuthenticated)
             {
-                return null;
+                throw new Exception("User is not authenticated");
             }
 
             var phoneNumber = userClaims.FindFirst(ClaimTypes.MobilePhone)?.Value;
 
             if (string.IsNullOrEmpty(phoneNumber))
             {
-                return null;
+                throw new Exception("Phone number is not found");
             }
 
-            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.PhoneNumber == phoneNumber);
+            var user = await _accountRepository.GetCurrentUserAsync(phoneNumber);
 
             return user == null ? null : _mapper.Map<UserModel>(user);
+        }
+
+        public async Task<string> UpdateAvatarAsync(UserAvatar avatar)
+        {
+            var user = await _userManager.Users.FirstOrDefaultAsync(u => u.PhoneNumber == avatar.PhoneNumber);
+            if (user == null) throw new Exception("User not found");
+            
+            if (avatar.Avatar == null || avatar.Avatar.Length == 0)
+                throw new Exception("No file provided");
+
+            await using var stream = avatar.Avatar.OpenReadStream();
+
+            var uploadParams = new ImageUploadParams
+            {
+                File = new FileDescription(avatar.Avatar.FileName, stream),
+                Folder = "avatars",
+                PublicId = user.Id,
+                Transformation = new Transformation()
+            };
+            
+            var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+            if (uploadResult.StatusCode != HttpStatusCode.OK)
+                throw new Exception("Upload failed"); 
+            
+            var result = await _accountRepository.UpdateAvatarAsync(user.PhoneNumber, uploadResult.SecureUrl.AbsoluteUri);
+            if (!result) throw new Exception("Update failed");
+            
+            return uploadResult.SecureUrl.AbsoluteUri;
         }
     }
 }
