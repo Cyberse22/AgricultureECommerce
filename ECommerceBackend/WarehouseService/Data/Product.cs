@@ -15,7 +15,6 @@ namespace WarehouseService.Data
         public long? ProductPrice { get; set; }
         [BsonElement]
         public List<string>? ProductImage { get; set; } = new();
-
         [BsonElement] 
         public List<string>? CategoryIds { get; set; } = new();
         [BsonElement]

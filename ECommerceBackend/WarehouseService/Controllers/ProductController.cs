@@ -113,7 +113,7 @@ namespace WarehouseService.Controllers
                     return BadRequest("Invalid product data.");
                 }
                 var createdProduct = await _productService.CreateProductAsync(model);
-                return CreatedAtAction(nameof(GetProductById), new { productName = createdProduct.ProductName }, createdProduct);
+                return CreatedAtAction(nameof(GetProductById), new { productId = createdProduct.ProductId }, createdProduct);
             }
             catch (Exception ex)
             {

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\AgricultureECommerce\\ECommerceBackend\\Shared.Messaging\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{41EEBC6E-176D-9BA3-C69C-1599811C558F}|Shared.Messaging.csproj|d:\\agricultureecommerce\\ecommercebackend\\shared.messaging\\rabbitmqconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EEBC6E-176D-9BA3-C69C-1599811C558F}|Shared.Messaging.csproj|solutionrelative:rabbitmqconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41EEBC6E-176D-9BA3-C69C-1599811C558F}|Shared.Messaging.csproj|d:\\agricultureecommerce\\ecommercebackend\\shared.messaging\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41EEBC6E-176D-9BA3-C69C-1599811C558F}|Shared.Messaging.csproj|solutionrelative:models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41EEBC6E-176D-9BA3-C69C-1599811C558F}|Shared.Messaging.csproj|d:\\agricultureecommerce\\ecommercebackend\\shared.messaging\\shared.messaging.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{41EEBC6E-176D-9BA3-C69C-1599811C558F}|Shared.Messaging.csproj|solutionrelative:shared.messaging.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Models.cs",
+              "DocumentMoniker": "D:\\AgricultureECommerce\\ECommerceBackend\\Shared.Messaging\\Models.cs",
+              "RelativeDocumentMoniker": "Models.cs",
+              "ToolTip": "D:\\AgricultureECommerce\\ECommerceBackend\\Shared.Messaging\\Models.cs",
+              "RelativeToolTip": "Models.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T21:57:28.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Shared.Messaging.csproj",
+              "DocumentMoniker": "D:\\AgricultureECommerce\\ECommerceBackend\\Shared.Messaging\\Shared.Messaging.csproj",
+              "RelativeDocumentMoniker": "Shared.Messaging.csproj",
+              "ToolTip": "D:\\AgricultureECommerce\\ECommerceBackend\\Shared.Messaging\\Shared.Messaging.csproj",
+              "RelativeToolTip": "Shared.Messaging.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-08T10:25:58.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RabbitMQConfig.cs",
+              "DocumentMoniker": "D:\\AgricultureECommerce\\ECommerceBackend\\Shared.Messaging\\RabbitMQConfig.cs",
+              "RelativeDocumentMoniker": "RabbitMQConfig.cs",
+              "ToolTip": "D:\\AgricultureECommerce\\ECommerceBackend\\Shared.Messaging\\RabbitMQConfig.cs",
+              "RelativeToolTip": "RabbitMQConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAACaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T10:14:30.143Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

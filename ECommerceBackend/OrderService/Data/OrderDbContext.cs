@@ -25,6 +25,11 @@ public class OrderDbContext : DbContext
             .HasForeignKey(i => i.OrderCode)
             .HasPrincipalKey(o => o.OrderId)
             .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Order>()
+            .HasMany(o => o.Items)
+            .WithOne(i => i.Order)
+            .HasForeignKey(i => i.OrderCode);
     }
     #endregion
 }

@@ -20,6 +20,12 @@
     <PackageReference Include="StackExchange.Redis" Version="2.8.16" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
+	<PackageReference Include="MassTransit" Version="8.2.2" />
+	<PackageReference Include="MassTransit.RabbitMQ" Version="8.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared.Messaging\Shared.Messaging.csproj" />
   </ItemGroup>
 
 </Project>

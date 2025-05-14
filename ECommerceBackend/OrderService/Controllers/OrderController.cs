@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using OrderService.Models;
 using OrderService.Services;
@@ -11,45 +12,90 @@ namespace OrderService.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
+        private readonly IPublishEndpoint _publishEndpoint;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService, IPublishEndpoint publishEndpoint)
         {
             _orderService = orderService;
+            _publishEndpoint = publishEndpoint;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetOrders()
+        //[HttpGet("{userId}")]
+        //public async Task<IActionResult> GetOrdersByUserId(string userId)
+        //{
+        //    if (string.IsNullOrEmpty(userId))
+        //    {
+        //        return BadRequest("UserId is required");
+        //    }
+
+        //    try
+        //    {
+        //        var orders = await _orderService.GetOrdersByUserIdAsync(userId);
+        //        if (orders == null || !orders.Any())
+        //        {
+        //            return NotFound("No orders found for this user");
+        //        }
+
+        //        // Publish OrderQueriedMessage
+        //        await _publishEndpoint.Publish(new OrderQueriedMessage
+        //        {
+        //            UserId = userId,
+        //            OrderCount = orders.Count,
+        //            Timestamp = DateTime.UtcNow
+        //        });
+
+        //        return Ok(orders);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, $"Error retrieving orders: {ex.Message}");
+        //    }
+        //}
+
+        [HttpGet("details/{orderId}")]
+        public async Task<IActionResult> GetOrderDetails(string orderId)
         {
-            var result = await _orderService.GetAllOrdersAsync();
-            return Ok(result);
+            if (string.IsNullOrEmpty(orderId))
+            {
+                return BadRequest("OrderId is required");
+            }
+
+            try
+            {
+                var order = await _orderService.GetOrderByIdAsync(orderId);
+                if (order == null)
+                {
+                    return NotFound("Order not found");
+                }
+                return Ok(order);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving order details: {ex.Message}");
+            }
         }
 
-        [HttpGet("order-id")]
-        public async Task<IActionResult> GetOrderId(string orderId)
+        [HttpPut("cancel/{orderId}")]
+        public async Task<IActionResult> CancelOrder(string orderId)
         {
-            var result = await _orderService.GetOrderIdAsync(orderId);
-            if (result == null) return NotFound();
-            return Ok(result);
-        }
+            if (string.IsNullOrEmpty(orderId))
+            {
+                return BadRequest("OrderId is required");
+            }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateOrder([FromBody] CreateOrderModel model)
-        {
-            var result = await _orderService.CreateOrderAsync(model);
-            return CreatedAtAction(nameof(GetOrderId), new { id = result.OrderId }, result);
-        }
-        [HttpGet("by-date")]
-        public async Task<IActionResult> GetOrdersByDate([FromQuery] DateTime date)
-        {
-            var orders = await _orderService.GetAllOrdersByDateAsync(date);
-            return Ok(orders);
-        }
-
-        [HttpGet("by-date-with-index")]
-        public async Task<IActionResult> GetOrdersByDateWithIndex([FromQuery] DateTime date)
-        {
-            var orders = await _orderService.GetOrdersByDateWithIndex(date);
-            return Ok(orders);
+            try
+            {
+                var result = await _orderService.CancelOrderAsync(orderId);
+                if (!result)
+                {
+                    return NotFound("Order not found or cannot be cancelled");
+                }
+                return Ok(new { Message = "Order cancelled successfully" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error cancelling order: {ex.Message}");
+            }
         }
     }
 }

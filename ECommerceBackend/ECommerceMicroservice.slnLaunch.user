@@ -49,5 +49,18 @@
         "Action": "Start"
       }
     ]
+  },
+  {
+    "Name": "Cart + Order",
+    "Projects": [
+      {
+        "Path": "CartService\\CartService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "OrderService\\OrderService.csproj",
+        "Action": "Start"
+      }
+    ]
   }
 ]

@@ -2,20 +2,28 @@
 {
     public class OrderModel
     {
-        public string FullName { get; set; }
-        public string OrderId { get; set; }
-        public string OrderInfo { get; set; }
-        public long Amount { get; set; }
+        public string OrderId { get; set; } = null!;
+        public string CustomerId { get; set; } = null!;
+        public string? CustomerName { get; set; }
+        public string? CustomerPhone { get; set; }
+        public string PaymentMethod { get; set; } = "Cash";
+        public string Status { get; set; } = "Pending";
+        public decimal TotalAmount { get; set; }
+        public int Index { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public List<OrderItemModel> Items { get; set; } = new();
     }
 
     public class OrderItemModel
     {
-        public string? ProductId { get; set; }
+        public string ProductId { get; set; } = null!;
         public string? ProductName { get; set; }
         public int Quantity { get; set; }
-        public long? UnitPrice { get; set; }
+        public decimal UnitPrice { get; set; }
         public decimal? Discount { get; set; }
+        public decimal Subtotal { get; set; }
     }
+
 
     public class CreateOrderModel
     {

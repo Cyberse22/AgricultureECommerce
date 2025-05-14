@@ -94,6 +94,17 @@ namespace UserService.Controllers
             return StatusCode(500);
         }
 
+        [HttpPost("CreateStaff")]
+        public async Task<IActionResult> CreateStaff(SignUpModel staff)
+        {
+            var result = await _accountService.CreateStaffAsync(staff);
+            if (result.Succeeded)
+            {
+                return Ok(result.Succeeded);
+            }
+            return StatusCode(500);
+        }
+
         [HttpPut("update-avatar")]
         public async Task<IActionResult> UpdateAvatar([FromForm] UserAvatar model)
         {

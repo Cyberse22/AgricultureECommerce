@@ -6,7 +6,7 @@
         public string? CustomerId { get; set; }
         public string? CustomerName { get; set; }
         public string? CustomerPhone { get; set; }
-        public string? Status { get; set; } // Pending, Failed, Paid, Cancelled
+        public string? Status { get; set; } = "Pending";
         public decimal TotalAmount { get; set; }
         public string? PaymentMethod { get; set; } // Momo, VNPAY, Cash
         public string? PaymentTransactionId { get; set; }

@@ -1,5 +1,5 @@
 // app/checkout/page.tsx
-
+"use client"
 import { useRouter } from 'next/router';
 
 const CheckoutPage = () => {

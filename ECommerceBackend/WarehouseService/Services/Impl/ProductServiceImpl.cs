@@ -25,6 +25,7 @@ namespace WarehouseService.Services.Impl
         public async Task<CreateProductModel> CreateProductAsync (CreateProductModel model)
         {
             var product = _mapper.Map<Product>(model);
+            product.AvailableQuantity = model.Quantity;
             await _productRepository.CreateProductAsync(product);
             return _mapper.Map<CreateProductModel>(product);
         }

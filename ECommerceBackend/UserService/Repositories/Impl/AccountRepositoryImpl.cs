@@ -112,6 +112,7 @@ namespace UserService.Repositories.Impl
         {
             var user = new ApplicationUser
             {
+                UserId = ("user" + admin.PhoneNumber),
                 UserName = admin.PhoneNumber,
                 FirstName = admin.FirstName,
                 LastName = admin.LastName,
@@ -128,6 +129,31 @@ namespace UserService.Repositories.Impl
                     await _roleManager.CreateAsync(new IdentityRole(StaticEntities.UserRoles.Admin));
                 }
                 await _userManager.AddToRoleAsync(user, StaticEntities.UserRoles.Admin);
+            }
+            return result;
+        }
+
+        public async Task<IdentityResult> CreateStaff(SignUpModel staff)
+        {
+            var user = new ApplicationUser
+            {
+                UserId = ("user" + staff.PhoneNumber),
+                UserName = staff.PhoneNumber,
+                FirstName = staff.FirstName,
+                LastName = staff.LastName,
+                Email = staff.Email,
+                DateOfBirth = staff.DateOfBirth,
+                Gender = staff.Gender,
+                PhoneNumber = staff.PhoneNumber,
+            };
+            var result = await _userManager.CreateAsync(user, staff.Password);
+            if (result.Succeeded)
+            {
+                if (!await _roleManager.RoleExistsAsync(StaticEntities.UserRoles.Staff))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(StaticEntities.UserRoles.Staff));
+                }
+                await _userManager.AddToRoleAsync(user, StaticEntities.UserRoles.Staff);
             }
             return result;
         }

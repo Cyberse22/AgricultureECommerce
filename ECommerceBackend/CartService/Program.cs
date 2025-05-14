@@ -4,6 +4,8 @@ using CartService.Services;
 using CartService.Services.Impl;
 using StackExchange.Redis;
 using Polly;
+using MassTransit;
+using Shared.Messaging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,7 +50,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 
 builder.Services.AddControllers();
 
-// Cấu hình Swagger
+// Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -56,6 +58,35 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IConnectionMultiplexer>(redis);
 builder.Services.AddScoped<ICartRepository, CartRepositoryImpl>();
 builder.Services.AddScoped<ICartService, CartServiceImpl>();
+builder.Services.AddScoped<OrderCreatedConsumer>();
+
+//// MassTransit RabbitMQ
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+        //cfg.ConfigureEndpoints(context);
+    });
+});
+
+//builder.Services.AddRabbitMQ(builder.Configuration);
+
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole();
+    logging.SetMinimumLevel(LogLevel.Debug);
+});
+
+// CORS
+builder.Services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+{
+    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+}));
 
 var app = builder.Build();
 
@@ -66,6 +97,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

@@ -5,53 +5,70 @@ namespace OrderService.Repositories.Impl;
 
 public class OrderRepositoryImpl : IOrderRepository
 {
-    private readonly OrderDbContext _orderDbContextcontext;
+    private readonly OrderDbContext _context;
 
-    public OrderRepositoryImpl(OrderDbContext orderDbContextcontext)
+    public OrderRepositoryImpl(OrderDbContext context)
     {
-        _orderDbContextcontext = orderDbContextcontext;
+        _context = context;
     }
 
-    public async Task<IEnumerable<Order>> GetAllOrdersAsync()
+    public async Task<List<Order>> GetOrdersByUserIdAsync(string userId)
     {
-       return await _orderDbContextcontext.Orders.Include(o => o.Items).ToListAsync();
-    }
+        if (string.IsNullOrEmpty(userId))
+        {
+            return new List<Order>();
+        }
 
-    public async Task<Order?> GetOrderByIdAsync(string orderId)
-    {
-        return await _orderDbContextcontext.Orders.Include(o => o.Items).FirstOrDefaultAsync(o => o.OrderId == orderId);
-    }
-
-    public async Task<Order> CreateOrderAsync(Order order)
-    {
-        _orderDbContextcontext.Orders.Add(order);
-        await _orderDbContextcontext.SaveChangesAsync();
-        return order;
-    }
-
-    public async Task SaveChangesAsync()
-    {
-        await _orderDbContextcontext.SaveChangesAsync();
-    }
-
-    public async Task<IEnumerable<Order>> GetOrdersByDateAsync(DateTime date)
-    {
-        var start = DateTime.SpecifyKind(date.Date, DateTimeKind.Utc);
-        var end = start.AddDays(1);
-
-        return await _orderDbContextcontext.Orders
-            .Where(o => o.CreatedAt >= start && o.CreatedAt < end)
+        return await _context.Orders
             .Include(o => o.Items)
-            .OrderBy(o => o.CreatedAt)
+            .Where(o => o.CustomerId == userId)
             .ToListAsync();
     }
 
-    public async Task<int> GetTodayOrderCountAsync(DateTime date)
+    public async Task<Order> GetOrderByIdAsync(string orderId)
     {
-        var start = DateTime.SpecifyKind(date.Date, DateTimeKind.Utc);
-        var end = start.AddDays(1);
+        if (string.IsNullOrEmpty(orderId))
+        {
+            return null!;
+        }
 
-        return await _orderDbContextcontext.Orders
-            .CountAsync(o => o.CreatedAt >= start && o.CreatedAt < end);    
+        return await _context.Orders
+            .Include(o => o.Items)
+            .FirstOrDefaultAsync(o => o.OrderId == orderId);
+    }
+
+    public async Task<bool> CancelOrderAsync(string orderId)
+    {
+        if (string.IsNullOrEmpty(orderId))
+        {
+            return false;
+        }
+
+        var order = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == orderId);
+        if (order == null || order.Status == "Cancelled")
+        {
+            return false;
+        }
+
+        order.Status = "Cancelled";
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task CreateOrderAsync(Order order)
+    {
+        if (order == null || string.IsNullOrEmpty(order.OrderId))
+        {
+            throw new ArgumentException("Invalid order");
+        }
+
+        await _context.Orders.AddAsync(order);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<int> GetTodayOrderCountAsync(DateTime today)
+    {
+        return await _context.Orders
+            .CountAsync(o => o.CreatedAt.Date == today);
     }
 }

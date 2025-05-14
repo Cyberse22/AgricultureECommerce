@@ -14,5 +14,6 @@ namespace UserService.Repositories
         Task UpdateUserAsync(UserDbContext user);
         Task<ApplicationUser> GetCurrentUserAsync(string phoneNumber);
         Task<bool> UpdateAvatarAsync(string phoneNumber, string avatar);
+        Task<IdentityResult> CreateStaff(SignUpModel staff);
     }
 }

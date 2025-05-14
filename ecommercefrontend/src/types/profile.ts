@@ -4,4 +4,5 @@ export interface profile {
     email: string;
     phoneNumber: string;
     avatar: string;
+    role: string;
 }

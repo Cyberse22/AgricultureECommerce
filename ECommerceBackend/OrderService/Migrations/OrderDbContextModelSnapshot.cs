@@ -100,8 +100,8 @@ namespace OrderService.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
-                    b.Property<long?>("Subtotal")
-                        .HasColumnType("bigint");
+                    b.Property<decimal?>("Subtotal")
+                        .HasColumnType("numeric");
 
                     b.Property<long?>("UnitPrice")
                         .HasColumnType("bigint");

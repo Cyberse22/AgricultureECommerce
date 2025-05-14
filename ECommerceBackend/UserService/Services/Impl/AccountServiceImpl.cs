@@ -89,6 +89,11 @@ namespace UserService.Services.Impl
             return await _accountRepository.CreateAdmin(admin);
         }
 
+        public async Task<IdentityResult> CreateStaffAsync(SignUpModel staff)
+        {
+            return await _accountRepository.CreateStaff(staff);
+        }
+
         public async Task<string> SignInAsync(SignInModel model)
         {
             var result = await _accountRepository.SignInAsync(model.PhoneNumber, model.Password);
@@ -122,8 +127,11 @@ namespace UserService.Services.Impl
             }
 
             var user = await _accountRepository.GetCurrentUserAsync(phoneNumber);
+            var role = await _userManager.GetRolesAsync(user);
+            var userModel = _mapper.Map<UserModel>(user);
+            userModel.Role = role.FirstOrDefault();
 
-            return user == null ? null : _mapper.Map<UserModel>(user);
+            return userModel;
         }
 
         public async Task<string> UpdateAvatarAsync(UserAvatar avatar)

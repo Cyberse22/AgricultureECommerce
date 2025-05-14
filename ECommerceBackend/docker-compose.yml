@@ -244,6 +244,16 @@ services:
     depends_on:
       consul:
         condition: service_healthy
+  
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"    # Port giao tiếp giữa Service
+      - "15672:15672"  # Web UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
 
 networks:
   my_network:

@@ -9,6 +9,7 @@ namespace UserService.Services
     {
         Task<IdentityResult> SignUpAsync(SignUpModel model);
         Task<IdentityResult> CreateAdminAsync(SignUpModel admin);
+        Task<IdentityResult> CreateStaffAsync(SignUpModel staff);
         Task<string> SignInAsync(SignInModel model);
         Task<bool> AssignRoleAsync(ApplicationUser user, string role);
         Task<bool> ChangePasswordAsync(string phoneNumber, string currentPassword, string newPassword);
